@@ -2,587 +2,306 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#087443">
-<meta name="description" content="ইসলামী ছাত্র আন্দোলন বাংলাদেশ, মিরপুর মডেল থানা">
-<title>মিরপুর মডেল থানা | সাংগঠনিক অ্যাপ</title>
-
+<title>ইসলামী ছাত্র আন্দোলন বাংলাদেশ - মিরপুর মডেল থানা</title>
 <style>
-:root{
-  --green:#087443;
-  --dark:#075b35;
-  --red:#bd2935;
-  --bg:#f2f7f3;
-  --text:#20352a;
-  --muted:#68776d;
-}
 *{box-sizing:border-box}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:Arial,"Noto Sans Bengali",sans-serif;
-}
-header{
-  background:linear-gradient(135deg,var(--dark),var(--green));
-  color:white;
-  padding:24px 16px;
-  border-bottom:4px solid var(--red);
-}
+body{margin:0;background:#f2f7f3;color:#20352a;font-family:Arial,sans-serif}
+header{background:#087443;color:white;padding:22px 15px;border-bottom:4px solid #bd2935}
 header h1{font-size:21px;line-height:1.6;margin:0}
-header p{font-size:14px;margin:5px 0}
-nav{
-  display:flex;
-  gap:7px;
-  padding:10px;
-  background:white;
-  overflow-x:auto;
-  position:sticky;
-  top:0;
-  z-index:5;
-  box-shadow:0 2px 7px #00000010;
-}
-button{
-  font:inherit;
-  border:0;
-  border-radius:8px;
-  padding:11px 14px;
-  cursor:pointer;
-}
-nav button{
-  white-space:nowrap;
-  background:#e8f3eb;
-  color:var(--dark);
-}
-nav button.active,.primary{
-  background:var(--green);
-  color:white;
-}
-main{
-  max-width:900px;
-  margin:auto;
-  padding:15px;
-}
+header p{margin:5px 0}
+nav{display:flex;gap:6px;overflow-x:auto;background:white;padding:9px;position:sticky;top:0;z-index:5}
+button{font:inherit;border:0;border-radius:7px;padding:10px 12px;cursor:pointer}
+nav button{white-space:nowrap;background:#e5f1e8;color:#07552f}
+nav button.active,.primary{background:#087443;color:white}
+main{max-width:850px;margin:auto;padding:14px}
 .page.hidden{display:none}
 h2{font-size:21px}
-h3{font-size:17px;margin-top:5px}
-.card{
-  background:white;
-  padding:16px;
-  border-radius:12px;
-  margin-bottom:13px;
-  border:1px solid #e7eee8;
-  box-shadow:0 2px 8px #00000008;
-}
-.cards{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:10px;
-}
-.count{
-  font-size:27px;
-  font-weight:bold;
-  color:var(--green);
-  margin-top:8px;
-}
-.muted{
-  font-size:13px;
-  color:var(--muted);
-  line-height:1.8;
-}
-label{
-  display:block;
-  font-size:14px;
-  margin-top:10px;
-  font-weight:bold;
-}
-input,textarea{
-  width:100%;
-  padding:12px;
-  margin:7px 0 13px;
-  border:1px solid #cad8ce;
-  border-radius:8px;
-  font:inherit;
-  background:white;
-}
-.primary{
-  display:inline-block;
-  text-decoration:none;
-  padding:11px 14px;
-}
-.entry{
-  padding:13px 0;
-  border-bottom:1px solid #e2ebe4;
-  line-height:1.8;
-  overflow-wrap:anywhere;
-}
-.contact-row{
-  display:flex;
-  align-items:center;
-  gap:15px;
-}
-.contact-photo{
-  display:block;
-  width:110px;
-  max-width:36%;
-  height:auto;
-  object-fit:contain;
-  border-radius:8px;
-}
-.warning{
-  background:#fff5d9;
-  padding:13px;
-  border-radius:8px;
-  font-size:13px;
-  line-height:1.8;
-}
-.danger{background:#fff0f0;color:#a32029}
-footer{
-  text-align:center;
-  padding:22px;
-  color:var(--muted);
-  font-size:12px;
-}
-@media(min-width:650px){
-  .cards{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .contact-photo{width:130px}
-}
+.card{background:white;border:1px solid #e1eae3;border-radius:12px;padding:15px;margin-bottom:13px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.count{font-size:26px;font-weight:bold;color:#087443;margin-top:7px}
+label{display:block;font-weight:bold;font-size:14px;margin-top:10px}
+input,textarea{display:block;width:100%;padding:12px;margin:7px 0 13px;border:1px solid #cad8ce;border-radius:8px;font:inherit}
+.entry{padding:12px 0;border-bottom:1px solid #e1eae3;line-height:1.8;overflow-wrap:anywhere}
+.entry button{margin:7px 5px 0 0}
+.secondary{background:#e8eee9;color:#07552f}
+.danger{background:#ffeded;color:#a32029}
+.muted{font-size:13px;color:#68776d;line-height:1.8}
+.warning{background:#fff3d4;padding:12px;border-radius:8px;font-size:13px;line-height:1.8}
+.contact{display:flex;align-items:center;gap:14px}
+.contact img{width:90px;max-width:32%;height:auto;object-fit:contain}
+footer{text-align:center;padding:20px;font-size:12px;color:#68776d}
+@media(min-width:650px){.cards{grid-template-columns:repeat(4,minmax(0,1fr))}}
 </style>
 </head>
-
 <body>
-
 <header>
-  <h1>ইসলামী ছাত্র আন্দোলন বাংলাদেশ</h1>
-  <p>মিরপুর মডেল থানা শাখা</p>
-  <p>সাংগঠনিক তথ্য ও কার্যক্রম ব্যবস্থাপনা</p>
+<h1>ইসলামী ছাত্র আন্দোলন বাংলাদেশ</h1>
+<p>মিরপুর মডেল থানা শাখা</p>
+<p>সাংগঠনিক তথ্য ও কার্যক্রম ব্যবস্থাপনা</p>
 </header>
-
 <nav id="nav">
-  <button class="active" data-page="home">হোম</button>
-  <button data-page="committee">কমিটি</button>
-  <button data-page="members">সদস্য</button>
-  <button data-page="notices">নোটিশ</button>
-  <button data-page="events">প্রোগ্রাম</button>
-  <button data-page="contact">যোগাযোগ</button>
-  <button data-page="admin">অ্যাডমিন</button>
+<button class="active" data-page="home">হোম</button>
+<button data-page="committee">কমিটি</button>
+<button data-page="members">সদস্য</button>
+<button data-page="notices">নোটিশ</button>
+<button data-page="events">প্রোগ্রাম</button>
+<button data-page="contact">যোগাযোগ</button>
+<button data-page="admin">অ্যাডমিন</button>
 </nav>
-
 <main>
-
-<!-- হোম -->
 <section id="home" class="page">
-  <h2>স্বাগতম</h2>
-  <p class="muted">
-    মিরপুর মডেল থানা শাখার সাংগঠনিক কার্যক্রমের ব্যবস্থাপনা।
-  </p>
-
-  <div class="cards">
-    <div class="card">
-      কমিটির রেকর্ড
-      <div class="count" id="cc">০</div>
-    </div>
-    <div class="card">
-      সদস্যের রেকর্ড
-      <div class="count" id="mc">০</div>
-    </div>
-    <div class="card">
-      নোটিশ
-      <div class="count" id="nc">০</div>
-    </div>
-    <div class="card">
-      প্রোগ্রাম
-      <div class="count" id="ec">০</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>দ্রুত যোগাযোগ</h3>
-    <p>সভাপতি: মুহা. আবু বকর সিদ্দিক</p>
-    <p>সাধারণ সম্পাদক: এইচ এম সাইদুল ইসলাম সাইদ</p>
-    <button class="primary" onclick="showPage('contact')">
-      যোগাযোগ দেখুন
-    </button>
-  </div>
-
-  <div class="warning">
-    এটি প্রাথমিক সংস্করণ। কমিটি, সদস্য, নোটিশ ও প্রোগ্রামের তথ্য
-    এই ব্রাউজারের স্থানীয় স্টোরেজে থাকবে। অন্য ফোনে স্বয়ংক্রিয়ভাবে
-    তথ্য দেখা যাবে না। নিরাপদ অনলাইন ডেটাবেজ এখনো যুক্ত করা হয়নি।
-  </div>
+<h2>স্বাগতম</h2>
+<p class="muted">মিরপুর মডেল থানা শাখার সাংগঠনিক অ্যাপ।</p>
+<div class="cards">
+<div class="card">কমিটি<div class="count" id="cc">০</div></div>
+<div class="card">সদস্য<div class="count" id="mc">০</div></div>
+<div class="card">নোটিশ<div class="count" id="nc">০</div></div>
+<div class="card">প্রোগ্রাম<div class="count" id="ec">০</div></div>
+</div>
+<div class="card"><h3>সাংগঠনিক কার্যক্রম</h3>কমিটি, সদস্য, নোটিশ ও প্রোগ্রামের তথ্য মেনু থেকে দেখুন।</div>
+<div class="warning">প্রাথমিক সংস্করণ: তথ্য শুধু এই ব্রাউজারে সংরক্ষিত হবে। অন্য ফোনে একই তথ্য দেখাতে অনলাইন ডেটাবেস লাগবে।</div>
 </section>
-
-<!-- কমিটি -->
 <section id="committee" class="page hidden">
-  <h2>কমিটি ব্যবস্থাপনা</h2>
-
-  <div class="card">
-    <label for="cname">কমিটির নাম</label>
-    <input id="cname" placeholder="যেমন: থানা কমিটি">
-
-    <label for="cleader">দায়িত্বশীলের নাম</label>
-    <input id="cleader" placeholder="নাম লিখুন">
-
-    <label for="crole">পদবি</label>
-    <input id="crole" placeholder="যেমন: সভাপতি">
-
-    <button class="primary"
-      onclick="addRecord('committees',['cname','cleader','crole'])">
-      কমিটি যোগ করুন
-    </button>
-  </div>
-
-  <div class="card">
-    <h3>কমিটির তালিকা</h3>
-    <div id="committeeList"></div>
-  </div>
+<h2>কমিটি ব্যবস্থাপনা</h2>
+<div class="card"><form id="form-committees">
+<label for="c1">কমিটির নাম</label><input id="c1" required placeholder="যেমন: থানা কমিটি">
+<label for="c2">দায়িত্বশীলের নাম</label><input id="c2" required placeholder="নাম লিখুন">
+<label for="c3">পদবি</label><input id="c3" placeholder="পদবি লিখুন">
+<button class="primary" type="submit">কমিটি যোগ করুন</button>
+<button class="secondary cancel" type="button" hidden>বাতিল</button>
+</form></div>
+<div class="card"><h3>কমিটির তালিকা</h3><div id="committeeList"></div></div>
 </section>
-
-<!-- সদস্য -->
 <section id="members" class="page hidden">
-  <h2>সদস্য ব্যবস্থাপনা</h2>
-
-  <div class="card">
-    <label for="mname">সদস্যের নাম</label>
-    <input id="mname" placeholder="নাম লিখুন">
-
-    <label for="munit">ইউনিট বা প্রতিষ্ঠান</label>
-    <input id="munit" placeholder="প্রতিষ্ঠানের নাম">
-
-    <label for="mrole">পদবি</label>
-    <input id="mrole" placeholder="পদবি (ঐচ্ছিক)">
-
-    <button class="primary"
-      onclick="addRecord('members',['mname','munit','mrole'])">
-      সদস্য যোগ করুন
-    </button>
-  </div>
-
-  <div class="card">
-    <h3>সদস্য তালিকা</h3>
-    <div id="memberList"></div>
-  </div>
+<h2>সদস্য ব্যবস্থাপনা</h2>
+<div class="card"><form id="form-members">
+<label for="m1">সদস্যের নাম</label><input id="m1" required placeholder="নাম লিখুন">
+<label for="m2">ইউনিট/প্রতিষ্ঠান</label><input id="m2" placeholder="প্রতিষ্ঠানের নাম">
+<label for="m3">পদবি</label><input id="m3" placeholder="পদবি লিখুন">
+<button class="primary" type="submit">সদস্য যোগ করুন</button>
+<button class="secondary cancel" type="button" hidden>বাতিল</button>
+</form></div>
+<div class="card"><h3>সদস্য তালিকা</h3><div id="memberList"></div></div>
 </section>
-
-<!-- নোটিশ -->
 <section id="notices" class="page hidden">
-  <h2>নোটিশ বোর্ড</h2>
-
-  <div class="card">
-    <label for="ntitle">নোটিশের শিরোনাম</label>
-    <input id="ntitle" placeholder="শিরোনাম লিখুন">
-
-    <label for="nbody">বিস্তারিত</label>
-    <textarea id="nbody" rows="4"
-      placeholder="নোটিশের বিস্তারিত লিখুন"></textarea>
-
-    <button class="primary"
-      onclick="addRecord('notices',['ntitle','nbody'])">
-      নোটিশ যোগ করুন
-    </button>
-  </div>
-
-  <div class="card">
-    <h3>নোটিশসমূহ</h3>
-    <div id="noticeList"></div>
-  </div>
+<h2>নোটিশ বোর্ড</h2>
+<div class="card"><form id="form-notices">
+<label for="n1">নোটিশের শিরোনাম</label><input id="n1" required placeholder="শিরোনাম লিখুন">
+<label for="n2">বিস্তারিত</label><textarea id="n2" rows="4" placeholder="বিস্তারিত লিখুন"></textarea>
+<button class="primary" type="submit">নোটিশ যোগ করুন</button>
+<button class="secondary cancel" type="button" hidden>বাতিল</button>
+</form></div>
+<div class="card"><h3>নোটিশসমূহ</h3><div id="noticeList"></div></div>
 </section>
-
-<!-- প্রোগ্রাম -->
 <section id="events" class="page hidden">
-  <h2>প্রোগ্রাম ও ইভেন্ট</h2>
-
-  <div class="card">
-    <label for="ename">প্রোগ্রামের নাম</label>
-    <input id="ename" placeholder="প্রোগ্রামের নাম">
-
-    <label for="edate">তারিখ</label>
-    <input id="edate" type="date">
-
-    <label for="eplace">স্থান</label>
-    <input id="eplace" placeholder="প্রোগ্রামের স্থান">
-
-    <button class="primary"
-      onclick="addRecord('events',['ename','edate','eplace'])">
-      প্রোগ্রাম যোগ করুন
-    </button>
-  </div>
-
-  <div class="card">
-    <h3>প্রোগ্রামের তালিকা</h3>
-    <div id="eventList"></div>
-  </div>
+<h2>প্রোগ্রাম ও ইভেন্ট</h2>
+<div class="card"><form id="form-events">
+<label for="e1">প্রোগ্রামের নাম</label><input id="e1" required placeholder="প্রোগ্রামের নাম">
+<label for="e2">তারিখ</label><input id="e2" type="date">
+<label for="e3">স্থান</label><input id="e3" placeholder="স্থান লিখুন">
+<button class="primary" type="submit">প্রোগ্রাম যোগ করুন</button>
+<button class="secondary cancel" type="button" hidden>বাতিল</button>
+</form></div>
+<div class="card"><h3>প্রোগ্রামের তালিকা</h3><div id="eventList"></div></div>
 </section>
-
-<!-- যোগাযোগ -->
 <section id="contact" class="page hidden">
-  <h2>যোগাযোগ</h2>
-  <p class="muted">
-    ইসলামী ছাত্র আন্দোলন বাংলাদেশ — মিরপুর মডেল থানা
-  </p>
-
-  <div class="card">
-    <div class="contact-row">
-      <img class="contact-photo"
-        src="images/president.png"
-        alt="সভাপতি মুহা. আবু বকর সিদ্দিক">
-
-      <div>
-        <p class="muted">সভাপতি</p>
-        <h3>মুহা. আবু বকর সিদ্দিক</h3>
-        <p>মিরপুর মডেল থানা</p>
-        <p><strong>01879003145</strong></p>
-      </div>
-    </div>
-
-    <p>
-      <a class="primary" href="tel:+8801879003145">
-        📞 কল করুন
-      </a>
-    </p>
-  </div>
-
-  <div class="card">
-    <div class="contact-row">
-      <img class="contact-photo"
-        src="images/general-secretary.jpg"
-        alt="সাধারণ সম্পাদক এইচ এম সাইদুল ইসলাম সাইদ">
-
-      <div>
-        <p class="muted">সাধারণ সম্পাদক</p>
-        <h3>এইচ এম সাইদুল ইসলাম সাইদ</h3>
-        <p>মিরপুর মডেল থানা</p>
-        <p><strong>01949757904</strong></p>
-      </div>
-    </div>
-
-    <p>
-      <a class="primary" href="tel:+8801949757904">
-        📞 কল করুন
-      </a>
-    </p>
-  </div>
-
-  <p class="muted">
-    ছবির মূল ফাইল অপরিবর্তিত রাখা হয়েছে।
-  </p>
+<h2>যোগাযোগ</h2>
+<div class="card"><div class="contact">
+<img src="images/president.png" alt="সভাপতি">
+<div><p class="muted">সভাপতি</p><h3>মুহা. আবু বকর সিদ্দিক</h3><p>মিরপুর মডেল থানা</p><p>01879003145</p></div>
+</div><p><a class="primary" href="tel:+8801879003145">কল করুন</a></p></div>
+<div class="card"><div class="contact">
+<img src="images/general-secretary.jpg" alt="সাধারণ সম্পাদক">
+<div><p class="muted">সাধারণ সম্পাদক</p><h3>এইচ এম সাইদুল ইসলাম সাইদ</h3><p>মিরপুর মডেল থানা</p><p>01949757904</p></div>
+</div><p><a class="primary" href="tel:+8801949757904">কল করুন</a></p></div>
 </section>
-
-<!-- অ্যাডমিন -->
 <section id="admin" class="page hidden">
-  <h2>অ্যাডমিন তথ্য</h2>
-
-  <div class="card">
-    <h3>বর্তমান সংস্করণের অবস্থা</h3>
-    <p>অ্যাপের মেনু ও স্থানীয় তথ্য ব্যবস্থাপনা চালু আছে।</p>
-    <p>
-      তবে এটি এখনো নিরাপদ অ্যাডমিন লগইন বা অনলাইন ডেটাবেজসহ
-      পূর্ণাঙ্গ বহু-ব্যবহারকারীর অ্যাপ নয়।
-    </p>
-    <p>
-      অনলাইন ব্যবহারের জন্য Firebase Authentication,
-      Cloud Firestore এবং নিরাপত্তা বিধি যুক্ত করতে হবে।
-    </p>
-  </div>
+<h2>অ্যাডমিন প্যানেল</h2>
+<div class="card">
+<p id="adminStatus">আপনি লগইন করেননি।</p>
+<button id="loginBtn" class="primary" type="button">অ্যাডমিন লগইন</button>
+<button id="logoutBtn" class="danger" type="button" hidden>লগআউট</button>
+</div>
+<div class="warning">এই PIN-ভিত্তিক লগইন পরীক্ষামূলক, প্রকৃত নিরাপত্তা নয়।</div>
 </section>
-
 </main>
-
-<footer>
-  ইসলামী ছাত্র আন্দোলন বাংলাদেশ<br>
-  মিরপুর মডেল থানা শাখা
-</footer>
-
+<footer>ইসলামী ছাত্র আন্দোলন বাংলাদেশ<br>মিরপুর মডেল থানা শাখা</footer>
 <script>
-const labels = {
-  committees: ['কমিটির নাম','দায়িত্বশীল','পদবি'],
-  members: ['সদস্যের নাম','ইউনিট/প্রতিষ্ঠান','পদবি'],
-  notices: ['শিরোনাম','বিস্তারিত'],
-  events: ['প্রোগ্রাম','তারিখ','স্থান']
+const ADMIN_PIN='mirpur@2026';
+let isAdmin=false;
+let editing=null;
+
+const db={
+ committees:{form:'form-committees',fields:['c1','c2','c3'],labels:['কমিটির নাম','দায়িত্বশীল','পদবি'],list:'committeeList',page:'committee',count:'cc',submit:'কমিটি যোগ করুন'},
+ members:{form:'form-members',fields:['m1','m2','m3'],labels:['সদস্যের নাম','ইউনিট/প্রতিষ্ঠান','পদবি'],list:'memberList',page:'members',count:'mc',submit:'সদস্য যোগ করুন'},
+ notices:{form:'form-notices',fields:['n1','n2'],labels:['শিরোনাম','বিস্তারিত'],list:'noticeList',page:'notices',count:'nc',submit:'নোটিশ যোগ করুন'},
+ events:{form:'form-events',fields:['e1','e2','e3'],labels:['প্রোগ্রাম','তারিখ','স্থান'],list:'eventList',page:'events',count:'ec',submit:'প্রোগ্রাম যোগ করুন'}
 };
 
-function readRecords(key) {
-  try {
-    return JSON.parse(
-      localStorage.getItem('mirpur_' + key) || '[]'
-    );
-  } catch (error) {
-    return [];
+function readRecords(key){
+ try{
+  const v=JSON.parse(localStorage.getItem('mirpur_'+key)||'[]');
+  return Array.isArray(v)?v:[];
+ }catch(e){return [];}
+}
+function saveRecords(key,records){
+ try{
+  localStorage.setItem('mirpur_'+key,JSON.stringify(records));
+  return true;
+ }catch(e){
+  alert('তথ্য সংরক্ষণ করা যায়নি।');
+  return false;
+ }
+}
+function showPage(id){
+ document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));
+ document.getElementById(id).classList.remove('hidden');
+ document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));
+ window.scrollTo(0,0);
+ renderAll();
+}
+document.querySelectorAll('#nav button').forEach(button=>{
+ button.addEventListener('click',()=>{
+  const page=button.dataset.page;
+  if(page==='admin'&&!isAdmin){
+   showPage('admin');
+   return;
   }
-}
-
-function saveRecords(key, records) {
-  try {
-    localStorage.setItem(
-      'mirpur_' + key,
-      JSON.stringify(records)
-    );
-    return true;
-  } catch (error) {
-    alert('তথ্য সংরক্ষণ করা যায়নি।');
-    return false;
-  }
-}
-
-function addRecord(key, ids) {
-  const values = ids.map(id =>
-    document.getElementById(id).value.trim()
-  );
-
-  if (!values[0]) {
-    alert('প্রথম ঘরটি পূরণ করুন।');
-    return;
-  }
-
-  const records = readRecords(key);
-  records.unshift({values: values});
-
-  if (saveRecords(key, records)) {
-    ids.forEach(id => {
-      document.getElementById(id).value = '';
-    });
-
-    renderAll();
-    alert('তথ্য এই ব্রাউজারে সংরক্ষিত হয়েছে।');
-  }
-}
-
-function removeRecord(key, index) {
-  if (!confirm('এই তথ্যটি মুছে ফেলবেন?')) return;
-
-  const records = readRecords(key);
-  records.splice(index, 1);
-
-  if (saveRecords(key, records)) {
-    renderAll();
-  }
-}
-
-function renderList(key, elementId) {
-  const el = document.getElementById(elementId);
-  const records = readRecords(key);
-
-  el.replaceChildren();
-
-  if (!records.length) {
-    el.textContent = 'এখনো কোনো তথ্য যোগ করা হয়নি।';
-    return;
-  }
-
-  records.forEach((record, index) => {
-    const item = document.createElement('div');
-    item.className = 'entry';
-
-    record.values.forEach((value, j) => {
-      const line = document.createElement('div');
-      const strong = document.createElement('strong');
-
-      strong.textContent =
-        (labels[key]?.[j] || 'তথ্য') + ': ';
-
-      line.append(strong, document.createTextNode(value));
-      item.appendChild(line);
-    });
-
-    const editBtn = document.createElement('button');
-    editBtn.className = 'primary';
-    editBtn.textContent = 'সম্পাদনা করুন';
-
-    editBtn.addEventListener('click', () => {
-      startEdit(key, index);
-    });
-
-    const deleteBtn = document.createElement('button');
-    deleteBtn.className = 'danger';
-    deleteBtn.textContent = 'মুছুন';
-
-    deleteBtn.addEventListener('click', () => {
-      if (confirm('আপনি কি এই তথ্যটি মুছতে চান?')) {
-        removeRecord(key, index);
-      }
-    });
-
-    item.append(editBtn, deleteBtn);
-    el.appendChild(item);
-  });
-}
-  const el = document.getElementById(elementId);
-  const records = readRecords(key);
-
-  el.replaceChildren();
-
-  if (!records.length) {
-    el.textContent = 'এখনো কোনো তথ্য যোগ করা হয়নি।';
-    return;
-  }
-
-  records.forEach((record, index) => {
-    const item = document.createElement('div');
-    item.className = 'entry';
-
-    record.values.forEach((value, j) => {
-      const line = document.createElement('div');
-      const strong = document.createElement('strong');
-
-      strong.textContent = labels[key][j] + ': ';
-      line.append(strong, document.createTextNode(value));
-      item.appendChild(line);
-    });
-
-    const btn = document.createElement('button');
-    btn.className = 'danger';
-    btn.textContent = 'মুছুন';
-    btn.addEventListener('click', () =>
-      removeRecord(key, index)
-    );
-
-    item.appendChild(btn);
-    el.appendChild(item);
-  });
-}
-
-function renderAll() {
-  renderList('committees','committeeList');
-  renderList('members','memberList');
-  renderList('notices','noticeList');
-  renderList('events','eventList');
-
-  document.getElementById('cc').textContent =
-    readRecords('committees').length;
-
-  document.getElementById('mc').textContent =
-    readRecords('members').length;
-
-  document.getElementById('nc').textContent =
-    readRecords('notices').length;
-
-  document.getElementById('ec').textContent =
-    readRecords('events').length;
-}
-
-function showPage(id) {
-  document.querySelectorAll('.page').forEach(page => {
-    page.classList.toggle('hidden', page.id !== id);
-  });
-
-  document.querySelectorAll('#nav button').forEach(button => {
-    button.classList.toggle(
-      'active',
-      button.dataset.page === id
-    );
-  });
-
-  window.scrollTo({top: 0, behavior: 'smooth'});
-}
-
-document.querySelectorAll('#nav button').forEach(button => {
-  button.addEventListener('click', () => {
-    showPage(button.dataset.page);
-  });
+  showPage(page);
+ });
 });
 
+function updateAdmin(){
+ document.getElementById('adminStatus').textContent=isAdmin?'আপনি অ্যাডমিন হিসেবে লগইন করেছেন।':'আপনি লগইন করেননি।';
+ document.getElementById('loginBtn').hidden=isAdmin;
+ document.getElementById('logoutBtn').hidden=!isAdmin;
+ document.querySelectorAll('.cancel').forEach(b=>b.hidden=!(isAdmin&&editing&&b.closest('form').id===db[editing.key].form));
+}
+document.getElementById('loginBtn').addEventListener('click',()=>{
+ const pin=prompt('অ্যাডমিন পাসওয়ার্ড লিখুন:');
+ if(pin===null)return;
+ if(pin===ADMIN_PIN){
+  isAdmin=true;
+  updateAdmin();
+  renderAll();
+  alert('অ্যাডমিন লগইন হয়েছে।');
+ }else{
+  alert('পাসওয়ার্ড সঠিক নয়।');
+ }
+});
+document.getElementById('logoutBtn').addEventListener('click',()=>{
+ isAdmin=false;
+ editing=null;
+ Object.keys(db).forEach(k=>{
+  document.getElementById(db[k].form).reset();
+  setFormMode(k,false);
+ });
+ updateAdmin();
+ renderAll();
+ alert('লগআউট হয়েছে।');
+});
+
+function setFormMode(key,editMode){
+ const form=document.getElementById(db[key].form);
+ form.querySelector('[type="submit"]').textContent=editMode?'পরিবর্তন সংরক্ষণ করুন':db[key].submit;
+ form.querySelector('.cancel').hidden=!editMode;
+}
+function cancelEdit(key){
+ document.getElementById(db[key].form).reset();
+ if(editing&&editing.key===key)editing=null;
+ setFormMode(key,false);
+ updateAdmin();
+}
+Object.keys(db).forEach(key=>{
+ const form=document.getElementById(db[key].form);
+ form.addEventListener('submit',event=>{
+  event.preventDefault();
+  if(!isAdmin){alert('আগে অ্যাডমিন লগইন করুন।');return;}
+  const values=db[key].fields.map(id=>document.getElementById(id).value.trim());
+  if(!values[0]){alert('প্রথম ঘরটি পূরণ করুন।');return;}
+  const records=readRecords(key);
+  if(editing&&editing.key===key){
+   records[editing.index]={values};
+  }else{
+   records.unshift({values});
+  }
+  if(saveRecords(key,records)){
+   form.reset();
+   editing=null;
+   setFormMode(key,false);
+   renderAll();
+   alert('তথ্য সংরক্ষণ হয়েছে।');
+  }
+ });
+ form.querySelector('.cancel').addEventListener('click',()=>cancelEdit(key));
+});
+
+function startEdit(key,index){
+ if(!isAdmin){alert('আগে অ্যাডমিন লগইন করুন।');return;}
+ const record=readRecords(key)[index];
+ if(!record)return;
+ if(editing)cancelEdit(editing.key);
+ editing={key,index};
+ db[key].fields.forEach((id,i)=>{
+  document.getElementById(id).value=record.values[i]||'';
+ });
+ setFormMode(key,true);
+ updateAdmin();
+ showPage(db[key].page);
+}
+function removeRecord(key,index){
+ if(!isAdmin){alert('আগে অ্যাডমিন লগইন করুন।');return;}
+ if(!confirm('এই তথ্যটি মুছে ফেলবেন?'))return;
+ const records=readRecords(key);
+ records.splice(index,1);
+ if(saveRecords(key,records)){
+  if(editing&&editing.key===key)cancelEdit(key);
+  renderAll();
+ }
+}
+function renderList(key){
+ const conf=db[key];
+ const target=document.getElementById(conf.list);
+ target.replaceChildren();
+ const records=readRecords(key);
+ if(!records.length){
+  target.textContent='এখনো কোনো তথ্য যোগ করা হয়নি।';
+  return;
+ }
+ records.forEach((record,index)=>{
+  const item=document.createElement('div');
+  item.className='entry';
+  (record.values||[]).forEach((value,i)=>{
+   const line=document.createElement('div');
+   const strong=document.createElement('strong');
+   strong.textContent=conf.labels[i]+': ';
+   line.append(strong,document.createTextNode(value||''));
+   item.appendChild(line);
+  });
+  if(isAdmin){
+   const edit=document.createElement('button');
+   edit.className='primary';
+   edit.textContent='সম্পাদনা';
+   edit.addEventListener('click',()=>startEdit(key,index));
+   const del=document.createElement('button');
+   del.className='danger';
+   del.textContent='মুছুন';
+   del.addEventListener('click',()=>removeRecord(key,index));
+   item.append(edit,del);
+  }
+  target.appendChild(item);
+ });
+}
+function renderAll(){
+ Object.keys(db).forEach(key=>{
+  renderList(key);
+  document.getElementById(db[key].count).textContent=String(readRecords(key).length);
+ });
+ updateAdmin();
+}
 renderAll();
 </script>
-
 </body>
-                               </html>
+</html>
