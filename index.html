@@ -477,6 +477,53 @@ function renderList(key, elementId) {
       const line = document.createElement('div');
       const strong = document.createElement('strong');
 
+      strong.textContent =
+        (labels[key]?.[j] || 'তথ্য') + ': ';
+
+      line.append(strong, document.createTextNode(value));
+      item.appendChild(line);
+    });
+
+    const editBtn = document.createElement('button');
+    editBtn.className = 'primary';
+    editBtn.textContent = 'সম্পাদনা করুন';
+
+    editBtn.addEventListener('click', () => {
+      startEdit(key, index);
+    });
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.className = 'danger';
+    deleteBtn.textContent = 'মুছুন';
+
+    deleteBtn.addEventListener('click', () => {
+      if (confirm('আপনি কি এই তথ্যটি মুছতে চান?')) {
+        removeRecord(key, index);
+      }
+    });
+
+    item.append(editBtn, deleteBtn);
+    el.appendChild(item);
+  });
+}
+  const el = document.getElementById(elementId);
+  const records = readRecords(key);
+
+  el.replaceChildren();
+
+  if (!records.length) {
+    el.textContent = 'এখনো কোনো তথ্য যোগ করা হয়নি।';
+    return;
+  }
+
+  records.forEach((record, index) => {
+    const item = document.createElement('div');
+    item.className = 'entry';
+
+    record.values.forEach((value, j) => {
+      const line = document.createElement('div');
+      const strong = document.createElement('strong');
+
       strong.textContent = labels[key][j] + ': ';
       line.append(strong, document.createTextNode(value));
       item.appendChild(line);
