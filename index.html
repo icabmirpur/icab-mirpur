@@ -2,140 +2,279 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#087443">
-<meta name="description" content="ইসলামী ছাত্র আন্দোলন বাংলাদেশ, মিরপুর মডেল থানা শাখা, ঢাকা মহানগর পশ্চিমের সাংগঠনিক ওয়েবসাইট।">
+<meta name="description" content="ইসলামী ছাত্র আন্দোলন বাংলাদেশ, মিরপুর মডেল থানা শাখার সাংগঠনিক অ্যাপ">
 <title>ইসলামী ছাত্র আন্দোলন বাংলাদেশ | মিরপুর মডেল থানা</title>
 
 <style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:12px}
-body{
-  margin:0;
-  font-family:"Noto Sans Bengali","Hind Siliguri",Arial,sans-serif;
-  background:#f3f7f4;
-  color:#243129;
-  line-height:1.75
+:root {
+  --green: #087443;
+  --green-dark: #075b35;
+  --red: #bd2935;
+  --bg: #f2f7f3;
+  --ink: #20352a;
+  --muted: #68776d;
+  --line: #e0e9e2;
 }
-header{
-  background:linear-gradient(135deg,#075b35,#09854b);
-  color:#fff;
-  text-align:center;
-  padding:26px 12px
+
+* {
+  box-sizing: border-box;
 }
-header h1{font-size:23px;margin:0}
-header p{margin:3px 0}
-nav{
-  background:#064b2d;
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:4px;
-  padding:8px;
-  position:sticky;
-  top:0;
-  z-index:10
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Noto Sans Bengali", Arial, sans-serif;
 }
-nav a{
-  color:#fff;
-  text-decoration:none;
-  padding:7px 10px;
-  border-radius:5px;
-  font-size:14px
+
+header {
+  background: linear-gradient(135deg, var(--green-dark), var(--green));
+  color: white;
+  padding: 23px 17px 20px;
+  border-bottom: 4px solid var(--red);
 }
-nav a:hover{background:#138953}
-main{max-width:1100px;margin:auto;padding:12px}
-.hero,.section{
-  background:#fff;
-  border-radius:12px;
-  padding:19px;
-  margin:15px 0;
-  box-shadow:0 2px 9px #0000000b
+
+header h1 {
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 0 0 5px;
 }
-.hero{
-  text-align:center;
-  border-top:4px solid #087443;
-  padding:28px 15px
+
+header p {
+  font-size: 14px;
+  margin: 3px 0;
+  line-height: 1.6;
 }
-.hero h2{border:0;padding:0;font-size:25px}
-h2{
-  color:#087443;
-  font-size:21px;
-  margin-top:0;
-  border-bottom:2px solid #e4eee7;
-  padding-bottom:8px
+
+nav {
+  display: flex;
+  gap: 7px;
+  padding: 10px;
+  background: #fff;
+  overflow-x: auto;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  box-shadow: 0 2px 7px #0000000b;
 }
-h3{margin:8px 0}
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:13px
+
+nav button {
+  background: #e8f3eb;
+  color: var(--green-dark);
+  white-space: nowrap;
+  padding: 10px 13px;
 }
-.card{
-  border:1px solid #dce8df;
-  border-radius:10px;
-  padding:15px;
-  text-align:center;
-  overflow-wrap:anywhere;
-  background:#fff
+
+nav button.active,
+.primary {
+  background: var(--green);
+  color: #fff;
 }
-.photo{
-  width:105px;
-  height:105px;
-  object-fit:cover;
-  border-radius:50%;
-  border:3px solid #087443;
-  background:#e5f2e9
+
+/* কর্মসূচির সাবমেনু */
+#programSubmenu {
+  display: none;
+  background: #fff;
+  padding: 10px 12px;
+  border-top: 1px solid var(--line);
+  box-shadow: 0 2px 7px #00000008;
 }
-.role{color:#087443;font-weight:bold;margin:2px 0}
-.btn{
-  display:inline-block;
-  background:#087443;
-  color:#fff;
-  text-decoration:none;
-  padding:7px 12px;
-  border-radius:6px;
-  margin:4px;
-  font-size:14px;
-  border:0;
-  cursor:pointer
+
+#programSubmenu.open {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 7px;
 }
-.btn:hover{background:#075b35}
-.btn-red{background:#b42323}
-.item,.notice{
-  padding:13px;
-  background:#f5faf6;
-  border-left:4px solid #087443;
-  border-radius:5px;
-  margin:10px 0;
-  overflow-wrap:anywhere
+
+#programSubmenu .program-item {
+  background: #e8f3eb;
+  color: var(--green-dark);
+  text-align: left;
+  padding: 11px 13px;
+  border-radius: 9px;
 }
-.empty{text-align:center;color:#68766d;padding:12px}
-.small{font-size:13px;color:#66756a}
-label{display:block;font-weight:bold;margin-top:8px}
-select,input{
-  width:100%;
-  padding:11px;
-  border:1px solid #ccd9cf;
-  border-radius:7px;
-  margin:5px 0 12px;
-  font:inherit;
-  background:white
+
+nav a {
+  display: inline-block;
+  background: #e8f3eb;
+  color: var(--green-dark);
+  white-space: nowrap;
+  padding: 10px 13px;
+  border-radius: 9px;
+  text-decoration: none;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
 }
-footer{
-  background:#064c2d;
-  color:white;
-  text-align:center;
-  padding:22px 10px;
-  margin-top:25px
+
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 15px;
 }
-footer p{margin:5px}
-@media(max-width:480px){
-  header h1{font-size:19px}
-  main{padding:8px}
-  .section,.hero{padding:13px}
-  h2{font-size:19px}
-  nav a{font-size:13px;padding:6px 8px}
+
+.page.hidden {
+  display: none;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+h3 {
+  font-size: 17px;
+  margin: 5px 0 12px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 13px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 9px #102c1a0b;
+  border: 1px solid #edf2ee;
+}
+
+.count {
+  font-size: 27px;
+  font-weight: 750;
+  color: var(--green);
+  margin-top: 7px;
+}
+
+.small,
+.muted {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 650;
+  margin-top: 8px;
+}
+
+input,
+textarea,
+select {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 6px 0 12px;
+  border: 1px solid #cad8ce;
+  border-radius: 9px;
+  font: inherit;
+  background: #fff;
+  color: var(--ink);
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+  border: 0;
+  border-radius: 9px;
+  padding: 10px 13px;
+}
+
+.primary {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.entry {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  overflow-wrap: anywhere;
+  line-height: 1.7;
+}
+
+.entry:last-child {
+  border-bottom: 0;
+}
+
+.contact-row {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.contact-photo {
+  display: block;
+  width: 112px;
+  max-width: 35%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 9px;
+  flex-shrink: 0;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.contact-actions a {
+  padding: 10px 12px;
+}
+
+.warning {
+  background: #fff5d9;
+  border-left: 4px solid #d5a12c;
+  padding: 12px;
+  border-radius: 7px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+footer {
+  text-align: center;
+  padding: 22px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.danger {
+  background: #fff0f0;
+  color: #a32029;
+}
+
+@media (min-width: 650px) {
+  .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .contact-photo {
+    width: 135px;
+  }
+}
+
+@media (max-width: 390px) {
+  .contact-row {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .contact-photo {
+    width: 90px;
+  }
+
+  .card {
+    padding: 12px;
+  }
 }
 </style>
 </head>
@@ -145,370 +284,499 @@ footer p{margin:5px}
 <header>
   <h1>ইসলামী ছাত্র আন্দোলন বাংলাদেশ</h1>
   <p>মিরপুর মডেল থানা শাখা</p>
-  <p>ঢাকা মহানগর পশ্চিম</p>
+  <p>সাংগঠনিক তথ্য ও কার্যক্রম ব্যবস্থাপনা</p>
 </header>
 
-<nav>
-  <a href="#home">হোম</a>
-  <a href="#contact">যোগাযোগ</a>
-  <a href="#thana">থানা কমিটি</a>
-  <a href="#ward">ওয়ার্ড কমিটি</a>
-  <a href="#institution">শিক্ষাপ্রতিষ্ঠান</a>
-  <a href="#notices">নোটিশ</a>
-  <a href="#programs">কর্মসূচি</a>
+<nav id="nav" aria-label="প্রধান মেনু">
+  <button class="active" data-page="home">হোম</button>
+  <button data-page="committee">কমিটি</button>
+  <button data-page="members">সদস্য</button>
+  <button data-page="notices">নোটিশ</button>
+
+  <button
+    type="button"
+    id="programMenuButton"
+    aria-expanded="false"
+  >কর্মসূচি ▾</button>
+
+  <button data-page="events">প্রোগ্রাম</button>
+
+  <a
+    href="https://icabdlibrary.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >লাইব্রেরি</a>
+
+  <button data-page="contact">যোগাযোগ</button>
+  <button data-page="admin">অ্যাডমিন তথ্য</button>
 </nav>
+
+<!-- কর্মসূচিতে ক্লিক করলে এই পাঁচটি আইটেম দেখাবে -->
+<div id="programSubmenu" aria-label="কর্মসূচির তালিকা">
+  <div class="program-item">
+    ইলম ও তারবিয়াত (জ্ঞানার্জন ও প্রশিক্ষণ)
+  </div>
+
+  <div class="program-item">
+    আমল ও তাযকিয়াহ (আমল ও আত্মশুদ্ধি)
+  </div>
+
+  <div class="program-item">
+    তাবলীগ (দাওয়াত)
+  </div>
+
+  <div class="program-item">
+    তানজীম (সংগঠন)
+  </div>
+
+  <div class="program-item">
+    ইনকিলাব (বিপ্লব)
+  </div>
+</div>
 
 <main>
 
-<section class="hero" id="home">
+<!-- হোম -->
+<section id="home" class="page">
   <h2>স্বাগতম</h2>
-  <p><strong>ইসলামী ছাত্র আন্দোলন বাংলাদেশ</strong></p>
-  <p>মিরপুর মডেল থানা শাখা · ঢাকা মহানগর পশ্চিম</p>
-  <p>সাংগঠনিক কার্যক্রম, দায়িত্বশীলদের পরিচিতি, কমিটি, নোটিশ ও কর্মসূচির তথ্যকেন্দ্র।</p>
-  <a class="btn" href="#thana">কমিটি দেখুন</a>
-  <a class="btn" href="#contact">যোগাযোগ করুন</a>
+
+  <p class="muted">
+    সাংগঠনিক কার্যক্রমের তথ্য এক জায়গায় পরিচালনা করুন।
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+      কমিটির রেকর্ড
+      <div class="count" id="cc">০</div>
+      <div class="small">এই ব্রাউজারে সংরক্ষিত</div>
+    </div>
+
+    <div class="card">
+      সদস্যের রেকর্ড
+      <div class="count" id="mc">০</div>
+      <div class="small">এই ব্রাউজারে সংরক্ষিত</div>
+    </div>
+
+    <div class="card">
+      নোটিশ
+      <div class="count" id="nc">০</div>
+      <div class="small">এই ব্রাউজারে সংরক্ষিত</div>
+    </div>
+
+    <div class="card">
+      প্রোগ্রাম
+      <div class="count" id="ec">০</div>
+      <div class="small">এই ব্রাউজারে সংরক্ষিত</div>
+    </div>
+
+  </div>
+
+  <div class="card">
+    <h3>দ্রুত যোগাযোগ</h3>
+
+    <p>
+      <strong>সভাপতি:</strong>
+      মুহা. আবু বকর সিদ্দিক
+    </p>
+
+    <p>
+      <strong>সাধারণ সম্পাদক:</strong>
+      এইচ এম সাইদুল ইসলাম সাইদ
+    </p>
+
+    <button class="primary" onclick="showPage('contact')">
+      যোগাযোগ দেখুন
+    </button>
+  </div>
+
+  <div class="warning">
+    এটি প্রাথমিক ওয়েব অ্যাপ। এখন যোগ করা তথ্য এই ব্রাউজারের
+    স্থানীয় স্টোরেজে থাকবে; অন্য ফোনে স্বয়ংক্রিয়ভাবে যাবে না।
+    বাস্তব সদস্যদের গোপন তথ্য যোগ করবেন না যতক্ষণ না নিরাপদ
+    লগইন ও অনলাইন ডেটাবেজ যুক্ত হয়।
+  </div>
 </section>
 
-<section class="section" id="contact">
+<!-- কমিটি -->
+<section id="committee" class="page hidden">
+  <h2>কমিটি ব্যবস্থাপনা</h2>
+
+  <div class="card">
+    <label for="cname">কমিটির নাম</label>
+    <input id="cname" placeholder="যেমন: থানা কমিটি">
+
+    <label for="cleader">দায়িত্বশীলের নাম</label>
+    <input id="cleader" placeholder="নাম লিখুন">
+
+    <label for="crole">পদবি</label>
+    <input id="crole" placeholder="যেমন: সভাপতি">
+
+    <button
+      class="primary"
+      onclick="addRecord('committees',['cname','cleader','crole'])"
+    >কমিটি যোগ করুন</button>
+  </div>
+
+  <div class="card">
+    <h3>কমিটির তালিকা</h3>
+    <div id="committeeList"></div>
+  </div>
+</section>
+
+<!-- সদস্য -->
+<section id="members" class="page hidden">
+  <h2>সদস্য ব্যবস্থাপনা</h2>
+
+  <div class="card">
+    <label for="mname">সদস্যের নাম</label>
+    <input id="mname" placeholder="নাম লিখুন">
+
+    <label for="munit">ইউনিট বা প্রতিষ্ঠান</label>
+    <input id="munit" placeholder="ইউনিট/প্রতিষ্ঠানের নাম">
+
+    <label for="mrole">পদবি (ঐচ্ছিক)</label>
+    <input id="mrole" placeholder="পদবি">
+
+    <button
+      class="primary"
+      onclick="addRecord('members',['mname','munit','mrole'])"
+    >সদস্য যোগ করুন</button>
+  </div>
+
+  <div class="card">
+    <h3>সদস্য তালিকা</h3>
+    <div id="memberList"></div>
+  </div>
+</section>
+
+<!-- নোটিশ -->
+<section id="notices" class="page hidden">
+  <h2>নোটিশ বোর্ড</h2>
+
+  <div class="card">
+    <label for="ntitle">নোটিশের শিরোনাম</label>
+    <input id="ntitle" placeholder="শিরোনাম লিখুন">
+
+    <label for="nbody">বিস্তারিত</label>
+    <textarea
+      id="nbody"
+      rows="4"
+      placeholder="নোটিশের বিবরণ লিখুন"
+    ></textarea>
+
+    <button
+      class="primary"
+      onclick="addRecord('notices',['ntitle','nbody'])"
+    >নোটিশ যোগ করুন</button>
+  </div>
+
+  <div class="card">
+    <h3>নোটিশসমূহ</h3>
+    <div id="noticeList"></div>
+  </div>
+</section>
+
+<!-- প্রোগ্রাম -->
+<section id="events" class="page hidden">
+  <h2>প্রোগ্রাম ও ইভেন্ট</h2>
+
+  <div class="card">
+    <label for="ename">প্রোগ্রামের নাম</label>
+    <input id="ename" placeholder="প্রোগ্রামের নাম">
+
+    <label for="edate">তারিখ</label>
+    <input id="edate" type="date">
+
+    <label for="eplace">স্থান</label>
+    <input id="eplace" placeholder="প্রোগ্রামের স্থান">
+
+    <button
+      class="primary"
+      onclick="addRecord('events',['ename','edate','eplace'])"
+    >প্রোগ্রাম যোগ করুন</button>
+  </div>
+
+  <div class="card">
+    <h3>প্রোগ্রামের তালিকা</h3>
+    <div id="eventList"></div>
+  </div>
+</section>
+
+<!-- যোগাযোগ -->
+<section id="contact" class="page hidden">
   <h2>যোগাযোগ</h2>
-  <p>থানা শাখার সভাপতি ও সাধারণ সম্পাদকের সঙ্গে যোগাযোগ করুন।</p>
-  <div id="contactList" class="cards"></div>
+
+  <p class="muted">
+    ইসলামী ছাত্র আন্দোলন বাংলাদেশ — মিরপুর মডেল থানা শাখা
+  </p>
+
+  <div class="card">
+    <div class="contact-row">
+      <img
+        class="contact-photo"
+        src="images/president.png"
+        alt="সভাপতি মুহা. আবু বকর সিদ্দিক"
+      >
+
+      <div>
+        <p class="muted">সভাপতি</p>
+        <h3>মুহা. আবু বকর সিদ্দিক</h3>
+        <p>মিরপুর মডেল থানা</p>
+        <p><strong>01879003145</strong></p>
+      </div>
+    </div>
+
+    <div class="contact-actions">
+      <a class="primary" href="tel:+8801879003145">
+        📞 কল করুন
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="contact-row">
+      <img
+        class="contact-photo"
+        src="images/general-secretary.jpg"
+        alt="সাধারণ সম্পাদক এইচ এম সাইদুল ইসলাম সাইদ"
+      >
+
+      <div>
+        <p class="muted">সাধারণ সম্পাদক</p>
+        <h3>এইচ এম সাইদুল ইসলাম সাইদ</h3>
+        <p>মিরপুর মডেল থানা</p>
+        <p><strong>01949757904</strong></p>
+      </div>
+    </div>
+
+    <div class="contact-actions">
+      <a class="primary" href="tel:+8801949757904">
+        📞 কল করুন
+      </a>
+    </div>
+  </div>
+
+  <p class="muted">
+    ছবিগুলো মূল আপলোড করা ফাইল থেকে অপরিবর্তিত রাখা হয়েছে।
+  </p>
 </section>
 
-<section class="section" id="thana">
-  <h2>থানা কমিটি</h2>
-  <p class="small">মিরপুর মডেল থানা শাখার দায়িত্বশীলদের নাম ও পদবি।</p>
-  <input type="search" id="thanaSearch" placeholder="থানা কমিটিতে নাম বা পদবি খুঁজুন...">
-  <div id="thanaList" class="cards"></div>
-</section>
+<!-- অ্যাডমিন -->
+<section id="admin" class="page hidden">
+  <h2>অ্যাডমিন ও নিরাপত্তা</h2>
 
-<section class="section" id="ward">
-  <h2>ওয়ার্ড কমিটি</h2>
-  <label for="wardSelect">ওয়ার্ড নির্বাচন করুন</label>
-  <select id="wardSelect">
-    <option value="all">সকল ওয়ার্ড</option>
-  </select>
-  <input type="search" id="wardSearch" placeholder="নাম বা পদবি খুঁজুন...">
-  <div id="wardList" class="cards"></div>
-</section>
+  <div class="card">
+    <p>
+      এই সংস্করণে এখনো নিরাপদ অ্যাডমিন লগইন, অনলাইন ডেটাবেজ
+      বা সদস্যভিত্তিক অনুমতি চালু নেই।
+    </p>
 
-<section class="section" id="institution">
-  <h2>শিক্ষাপ্রতিষ্ঠান কমিটি</h2>
-  <label for="institutionSelect">প্রতিষ্ঠান নির্বাচন করুন</label>
-  <select id="institutionSelect">
-    <option value="all">সকল প্রতিষ্ঠান</option>
-  </select>
-  <input type="search" id="institutionSearch" placeholder="নাম, পদবি বা প্রতিষ্ঠানের নাম খুঁজুন...">
-  <div id="institutionList" class="cards"></div>
-</section>
+    <p>
+      এখানে তৈরি করা রেকর্ড শুধু এই ব্রাউজারের স্থানীয়
+      স্টোরেজে রাখা হয়। ব্রাউজারের ডেটা মুছে গেলে রেকর্ড হারাতে পারে।
+    </p>
 
-<section class="section" id="notices">
-  <h2>নোটিশ ও বিজ্ঞপ্তি</h2>
-  <div id="noticeList"></div>
-</section>
-
-<section class="section" id="programs">
-  <h2>সাংগঠনিক কর্মসূচি</h2>
-  <div id="programList"></div>
-</section>
-
-<section class="section" id="library">
-  <h2>ইসলামি পাঠাগার</h2>
-  <div id="libraryList"></div>
+    <p>
+      পরবর্তী সংস্করণে Firebase Authentication, Cloud Firestore
+      এবং নিরাপত্তা বিধি যোগ করে অনলাইনে বহু ফোনে ব্যবহারযোগ্য
+      করা যাবে।
+    </p>
+  </div>
 </section>
 
 </main>
 
 <footer>
-  <strong>ইসলামী ছাত্র আন্দোলন বাংলাদেশ</strong>
-  <p>মিরপুর মডেল থানা শাখা · ঢাকা মহানগর পশ্চিম</p>
-  <p>© <span id="year"></span> সর্বস্বত্ব সংরক্ষিত</p>
+  ইসলামী ছাত্র আন্দোলন বাংলাদেশ · মিরপুর মডেল থানা
 </footer>
 
 <script>
-const DATA = {
+const keys = [
+  'committees',
+  'members',
+  'notices',
+  'events'
+];
 
-  // সভাপতি ও সাধারণ সম্পাদকের যোগাযোগ
-  contacts: [
-    {
-      name: "মুহা. আবু বকর সিদ্দিক",
-      role: "সভাপতি",
-      phone: "01879003145",
-      photo: "images/president.png",
-      facebook: "https://www.facebook.com/abubakarsiddekphulpuri.0"
-    },
-    {
-      name: "এইচ এম সাইদুল ইসলাম সাইদ",
-      role: "সাধারণ সম্পাদক",
-      phone: "01949757904",
-      photo: "images/general-secretary.jpg",
-      facebook: "https://www.facebook.com/mdsaidulislamsaid.0"
-    }
-  ],
-
-  // থানা কমিটির ১৫ জন
-  thana: [
-    {name:"মুহা আবু বকর সিদ্দিক", role:"সভাপতি"},
-    {name:"মুহা গোলাম রাব্বি", role:"সহ-সভাপতি"},
-    {name:"এইচ এম সাইদুল ইসলাম সাইদ", role:"সাধারণ সম্পাদক"},
-    {name:"মুহা ফরহাদ হুসাইন", role:"সাংগঠনিক সম্পাদক"},
-    {name:"মুহা মুজাহিদুল ইসলাম", role:"প্রশিক্ষণ সম্পাদক"},
-    {name:"মোহাম্মদ মিনহাজ", role:"দাওয়াহ্ সম্পাদক"},
-    {name:"মুহা আশিকুর রহমান", role:"তথ্য গবেষণা ও প্রচার সম্পাদক"},
-    {name:"মুহা নাসিব আহমেদ", role:"প্রকাশনা ও দফতর সম্পাদক"},
-    {name:"মুহাম্মদ ইউসুফ", role:"অর্থ ও কল্যাণ সম্পাদক"},
-    {name:"মুহাম্মদ জুনায়েদ", role:"কওমী মাদরাসা সম্পাদক"},
-    {name:"মুহা রেজাউল করীম", role:"আলিয়া মাদরাসা সম্পাদক"},
-    {name:"মুহা আব্দুল্লাহ আল মামুন", role:"কলেজ সম্পাদক"},
-    {name:"মুহাম্মাদ রিফাত", role:"স্কুল সম্পাদক"},
-    {name:"মুহা ইব্রাহিম খলিল", role:"সাহিত্য ও সাংস্কৃতি সম্পাদক"},
-    {name:"মুহা নাহিদুল ইসলাম", role:"কার্যনির্বাহী সদস্য"}
-  ],
-
-  // দুইটি ওয়ার্ড কমিটি
-  wards: [
-    {ward:"১১ নং ওয়ার্ড", name:"মুহা ফরহাদ", role:"সভাপতি"},
-    {ward:"১১ নং ওয়ার্ড", name:"মুহা ইউসুফ", role:"সাধারণ সম্পাদক"},
-    {ward:"১৩ নং ওয়ার্ড", name:"মুহা ইব্রাহিম", role:"সভাপতি"},
-    {ward:"১৩ নং ওয়ার্ড", name:"মুহা আশিকুর রহমান", role:"সাধারণ সম্পাদক"}
-  ],
-
-  // দুইটি শিক্ষাপ্রতিষ্ঠান কমিটি
-  institutions: [
-    {institution:"দ্বিনিয়া মাদ্রাসা শাখা", name:"মুহা মুজাহিদুল ইসলাম", role:"সভাপতি"},
-    {institution:"দ্বিনিয়া মাদ্রাসা শাখা", name:"মুহা ইয়ামিন", role:"সাধারণ সম্পাদক"},
-    {institution:"বাইতুন নুর মাদ্রাসা শাখা", name:"মুহা শাহেদ ইসলাম", role:"সভাপতি"},
-    {institution:"বাইতুন নুর মাদ্রাসা শাখা", name:"মুহা আবুল কাশেম", role:"সাধারণ সম্পাদক"}
-  ],
-
-  notices: [],
-  programs: [],
-  library: []
+const labels = {
+  committees: ['কমিটির নাম', 'দায়িত্বশীল', 'পদবি'],
+  members: ['সদস্যের নাম', 'ইউনিট/প্রতিষ্ঠান', 'পদবি'],
+  notices: ['শিরোনাম', 'বিস্তারিত'],
+  events: ['প্রোগ্রাম', 'তারিখ', 'স্থান']
 };
 
-/* HTML নিরাপদভাবে প্রদর্শন */
-function esc(value){
-  return String(value ?? "").replace(/[&<>"']/g, function(c){
-    return {
-      "&":"&amp;",
-      "<":"&lt;",
-      ">":"&gt;",
-      '"':"&quot;",
-      "'":"&#39;"
-    }[c];
+function readRecords(key) {
+  try {
+    return JSON.parse(
+      localStorage.getItem('mirpur_' + key) || '[]'
+    );
+  } catch (e) {
+    return [];
+  }
+}
+
+function saveRecords(key, records) {
+  try {
+    localStorage.setItem(
+      'mirpur_' + key,
+      JSON.stringify(records)
+    );
+    return true;
+  } catch (e) {
+    alert('ব্রাউজারে জায়গা নেই বা সংরক্ষণ করা যাচ্ছে না।');
+    return false;
+  }
+}
+
+function addRecord(key, ids) {
+  const values = ids.map(
+    id => document.getElementById(id).value.trim()
+  );
+
+  if (!values[0]) {
+    alert('প্রথম ঘরটি পূরণ করুন।');
+    return;
+  }
+
+  const records = readRecords(key);
+  records.unshift({ values });
+
+  if (saveRecords(key, records)) {
+    ids.forEach(id => {
+      document.getElementById(id).value = '';
+    });
+
+    renderAll();
+    alert('এই ব্রাউজারে তথ্য সংরক্ষিত হয়েছে।');
+  }
+}
+
+function removeRecord(key, index) {
+  if (!confirm('এই রেকর্ডটি মুছে ফেলবেন?')) {
+    return;
+  }
+
+  const records = readRecords(key);
+  records.splice(index, 1);
+
+  if (saveRecords(key, records)) {
+    renderAll();
+  }
+}
+
+function renderList(key, elementId) {
+  const el = document.getElementById(elementId);
+  const records = readRecords(key);
+
+  el.replaceChildren();
+
+  if (!records.length) {
+    el.textContent = 'এখনো কোনো তথ্য যোগ করা হয়নি।';
+    return;
+  }
+
+  records.forEach((record, index) => {
+    const item = document.createElement('div');
+    item.className = 'entry';
+
+    record.values.forEach((value, j) => {
+      const line = document.createElement('div');
+      const strong = document.createElement('strong');
+
+      strong.textContent =
+        (labels[key][j] || 'তথ্য') + ': ';
+
+      line.append(
+        strong,
+        document.createTextNode(value)
+      );
+
+      item.appendChild(line);
+    });
+
+    const btn = document.createElement('button');
+    btn.textContent = 'মুছুন';
+    btn.className = 'danger';
+
+    btn.addEventListener('click', () => {
+      removeRecord(key, index);
+    });
+
+    item.appendChild(btn);
+    el.appendChild(item);
   });
 }
 
-/* কেবল HTTP ও HTTPS লিংক গ্রহণ */
-function safeUrl(value){
-  try{
-    const url = new URL(value);
-    if(url.protocol === "https:" || url.protocol === "http:"){
-      return url.href;
-    }
-  }catch(e){}
-  return "";
+function renderAll() {
+  renderList('committees', 'committeeList');
+  renderList('members', 'memberList');
+  renderList('notices', 'noticeList');
+  renderList('events', 'eventList');
+
+  document.getElementById('cc').textContent =
+    readRecords('committees').length;
+
+  document.getElementById('mc').textContent =
+    readRecords('members').length;
+
+  document.getElementById('nc').textContent =
+    readRecords('notices').length;
+
+  document.getElementById('ec').textContent =
+    readRecords('events').length;
 }
 
-/* কমিটির সদস্যের কার্ড */
-function memberCard(person, showContact=false){
-  let html = '<article class="card">';
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(page => {
+    page.classList.toggle('hidden', page.id !== id);
+  });
 
-  if(showContact && person.photo){
-    html += '<img class="photo" src="'+esc(person.photo)+
-      '" alt="'+esc(person.name)+
-      '" onerror="this.style.display=\'none\'">';
-  }
+  document.querySelectorAll('#nav button').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.page === id);
+  });
 
-  html += '<h3>'+esc(person.name)+'</h3>';
-  html += '<p class="role">'+esc(person.role)+'</p>';
-
-  if(person.ward){
-    html += '<p>'+esc(person.ward)+'</p>';
-  }
-
-  if(person.institution){
-    html += '<p>'+esc(person.institution)+'</p>';
-  }
-
-  if(showContact && person.phone){
-    const phone = String(person.phone).replace(/[^\d+]/g,"");
-    if(phone){
-      html += '<a class="btn" href="tel:'+esc(phone)+'">ফোন করুন</a>';
-      html += '<p class="small">'+esc(person.phone)+'</p>';
-    }
-  }
-
-  if(showContact && person.facebook){
-    const fb = safeUrl(person.facebook);
-    if(fb){
-      html += '<a class="btn" href="'+esc(fb)+
-        '" target="_blank" rel="noopener noreferrer">ফেসবুক আইডি</a>';
-    }
-  }
-
-  html += '</article>';
-  return html;
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 }
 
-/* যোগাযোগ */
-function renderContacts(){
-  const el = document.getElementById("contactList");
+/* সাধারণ মেনু */
+document.querySelectorAll('#nav button[data-page]')
+  .forEach(btn => {
+    btn.addEventListener('click', () => {
+      showPage(btn.dataset.page);
+    });
+  });
 
-  el.innerHTML = DATA.contacts.length
-    ? DATA.contacts.map(p => memberCard(p,true)).join("")
-    : '<p class="empty">যোগাযোগের তথ্য যোগ করা হয়নি।</p>';
-}
+/* কর্মসূচি মেনু খুলবে ও বন্ধ হবে */
+const programMenuButton =
+  document.getElementById('programMenuButton');
 
-/* থানা কমিটি ও সার্চ */
-function renderThana(){
-  const el = document.getElementById("thanaList");
-  const search = document.getElementById("thanaSearch");
+const programSubmenu =
+  document.getElementById('programSubmenu');
 
-  function show(){
-    const q = search.value.trim().toLowerCase();
-    const list = DATA.thana.filter(p =>
-      (p.name+" "+p.role).toLowerCase().includes(q)
-    );
+programMenuButton.addEventListener('click', () => {
+  const isOpen =
+    programSubmenu.classList.toggle('open');
 
-    el.innerHTML = list.length
-      ? list.map(p => memberCard(p)).join("")
-      : '<p class="empty">কোনো তথ্য পাওয়া যায়নি।</p>';
-  }
+  programMenuButton.setAttribute(
+    'aria-expanded',
+    String(isOpen)
+  );
 
-  search.addEventListener("input",show);
-  show();
-}
+  programMenuButton.classList.toggle(
+    'active',
+    isOpen
+  );
 
-/* ওয়ার্ড কমিটি, নির্বাচন ও সার্চ */
-function renderWards(){
-  const select = document.getElementById("wardSelect");
-  const search = document.getElementById("wardSearch");
-  const el = document.getElementById("wardList");
+  programMenuButton.textContent =
+    isOpen ? 'কর্মসূচি ▴' : 'কর্মসূচি ▾';
+});
 
-  const wardNames = [...new Set(
-    DATA.wards.map(p=>p.ward).filter(Boolean)
-  )];
-
-  select.innerHTML = '<option value="all">সকল ওয়ার্ড</option>' +
-    wardNames.map(w =>
-      '<option value="'+esc(w)+'">'+esc(w)+'</option>'
-    ).join("");
-
-  function show(){
-    const chosen = select.value;
-    const q = search.value.trim().toLowerCase();
-
-    const list = DATA.wards.filter(p =>
-      (chosen === "all" || p.ward === chosen) &&
-      (p.name+" "+p.role+" "+p.ward).toLowerCase().includes(q)
-    );
-
-    el.innerHTML = list.length
-      ? list.map(p=>memberCard(p)).join("")
-      : '<p class="empty">এই তালিকায় কোনো তথ্য নেই।</p>';
-  }
-
-  select.addEventListener("change",show);
-  search.addEventListener("input",show);
-  show();
-}
-
-/* শিক্ষাপ্রতিষ্ঠান কমিটি, নির্বাচন ও সার্চ */
-function renderInstitutions(){
-  const select = document.getElementById("institutionSelect");
-  const search = document.getElementById("institutionSearch");
-  const el = document.getElementById("institutionList");
-
-  const names = [...new Set(
-    DATA.institutions.map(p=>p.institution).filter(Boolean)
-  )];
-
-  select.innerHTML = '<option value="all">সকল প্রতিষ্ঠান</option>' +
-    names.map(n =>
-      '<option value="'+esc(n)+'">'+esc(n)+'</option>'
-    ).join("");
-
-  function show(){
-    const chosen = select.value;
-    const q = search.value.trim().toLowerCase();
-
-    const list = DATA.institutions.filter(p =>
-      (chosen === "all" || p.institution === chosen) &&
-      (p.name+" "+p.role+" "+p.institution).toLowerCase().includes(q)
-    );
-
-    el.innerHTML = list.length
-      ? list.map(p=>memberCard(p)).join("")
-      : '<p class="empty">এই তালিকায় কোনো তথ্য নেই।</p>';
-  }
-
-  select.addEventListener("change",show);
-  search.addEventListener("input",show);
-  show();
-}
-
-/* নোটিশ ও কর্মসূচি */
-function renderPosts(key,id){
-  const el = document.getElementById(id);
-  const list = DATA[key];
-
-  if(!list.length){
-    el.innerHTML = '<p class="empty">বর্তমানে কোনো তথ্য প্রকাশ করা হয়নি।</p>';
-    return;
-  }
-
-  el.innerHTML = list.map(item => {
-    let html = '<article class="item">';
-    html += '<h3>'+esc(item.title)+'</h3>';
-
-    if(item.date){
-      html += '<p class="small">তারিখ: '+esc(item.date)+'</p>';
-    }
-
-    if(item.place){
-      html += '<p>স্থান: '+esc(item.place)+'</p>';
-    }
-
-    if(item.text){
-      html += '<p>'+esc(item.text)+'</p>';
-    }
-
-    html += '</article>';
-    return html;
-  }).join("");
-}
-
-/* পাঠাগার */
-function renderLibrary(){
-  const el = document.getElementById("libraryList");
-
-  if(!DATA.library.length){
-    el.innerHTML = '<p class="empty">পাঠাগারের তথ্য এখনো যোগ করা হয়নি।</p>';
-    return;
-  }
-
-  el.innerHTML = DATA.library.map(item => {
-    const link = safeUrl(item.link || "");
-    return '<article class="item"><h3>'+esc(item.title)+'</h3>'+
-      '<p>'+esc(item.description || "")+'</p>'+
-      (link ? '<a class="btn" href="'+esc(link)+
-      '" target="_blank" rel="noopener noreferrer">বিস্তারিত পড়ুন</a>' : '')+
-      '</article>';
-  }).join("");
-}
-
-/* বছর */
-document.getElementById("year").textContent = new Date().getFullYear();
-
-/* সব অংশ চালু */
-renderContacts();
-renderThana();
-renderWards();
-renderInstitutions();
-renderPosts("notices","noticeList");
-renderPosts("programs","programList");
-renderLibrary();
+/* শুরুতে সংরক্ষিত তথ্য দেখাবে */
+renderAll();
 </script>
 
 </body>
