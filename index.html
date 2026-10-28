@@ -9,85 +9,155 @@
 
 <style>
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:70px}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:100px;
+}
+
 body{
   margin:0;
   font-family:"Noto Sans Bengali","Hind Siliguri",Arial,sans-serif;
   background:#f3f7f4;
   color:#243129;
-  line-height:1.75
+  line-height:1.75;
 }
+
 header{
   background:linear-gradient(135deg,#075b35,#09854b);
   color:#fff;
   text-align:center;
-  padding:26px 12px
+  padding:26px 12px;
 }
-header h1{font-size:23px;margin:0}
+
+header h1{
+  font-size:23px;
+  margin:0;
+}
+
 header p{margin:3px 0}
+
+/* আধুনিক সবুজ-সোনালি নেভিগেশন মেনু */
 nav{
-  background:#064b2d;
+  background:linear-gradient(135deg,#043d25,#075b35);
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
-  gap:4px;
-  padding:8px;
+  gap:8px;
+  padding:12px 10px;
   position:sticky;
   top:0;
-  z-index:10
+  z-index:100;
+  box-shadow:0 5px 16px #032c1b30;
+  border-bottom:2px solid #c9a955;
 }
+
 nav a{
-  color:#fff;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:#f7fff9;
   text-decoration:none;
-  padding:7px 10px;
-  border-radius:5px;
-  font-size:14px
+  padding:8px 13px;
+  border:1px solid #ffffff24;
+  border-radius:9px;
+  background:linear-gradient(145deg,#126c43,#0a5734);
+  font-size:14px;
+  font-weight:600;
+  line-height:1.6;
+  white-space:nowrap;
+  transition:
+    background .2s ease,
+    color .2s ease,
+    transform .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+  box-shadow:0 2px 5px #001f1230;
 }
-nav a:hover{background:#138953}
-main{max-width:1100px;margin:auto;padding:12px}
+
+nav a:hover{
+  background:linear-gradient(135deg,#d8bd72,#f0dda0);
+  color:#073d26;
+  border-color:#f0dda0;
+  transform:translateY(-2px);
+  box-shadow:0 5px 12px #001f1240;
+}
+
+nav a:active{
+  transform:scale(.96);
+}
+
+nav a:focus-visible{
+  outline:2px solid #f2d783;
+  outline-offset:3px;
+}
+
+main{
+  max-width:1100px;
+  margin:auto;
+  padding:12px;
+}
+
 .hero,.section{
   background:#fff;
   border-radius:12px;
   padding:19px;
   margin:15px 0;
-  box-shadow:0 2px 9px #0000000b
+  box-shadow:0 2px 9px #0000000b;
 }
+
 .hero{
   text-align:center;
   border-top:4px solid #087443;
-  padding:28px 15px
+  padding:28px 15px;
 }
-.hero h2{border:0;padding:0;font-size:25px}
+
+.hero h2{
+  border:0;
+  padding:0;
+  font-size:25px;
+}
+
 h2{
   color:#087443;
   font-size:21px;
   margin-top:0;
   border-bottom:2px solid #e4eee7;
-  padding-bottom:8px
+  padding-bottom:8px;
 }
+
 h3{margin:8px 0}
+
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:13px
+  gap:13px;
 }
+
 .card{
   border:1px solid #dce8df;
   border-radius:10px;
   padding:15px;
   text-align:center;
   overflow-wrap:anywhere;
-  background:#fff
+  background:#fff;
 }
+
 .photo{
   width:105px;
   height:105px;
   object-fit:cover;
   border-radius:50%;
   border:3px solid #087443;
-  background:#e5f2e9
+  background:#e5f2e9;
 }
-.role{color:#087443;font-weight:bold;margin:2px 0}
+
+.role{
+  color:#087443;
+  font-weight:bold;
+  margin:2px 0;
+}
+
 .btn{
   display:inline-block;
   background:#087443;
@@ -98,21 +168,39 @@ h3{margin:8px 0}
   margin:4px;
   font-size:14px;
   border:0;
-  cursor:pointer
+  cursor:pointer;
 }
+
 .btn:hover{background:#075b35}
+
 .btn-red{background:#b42323}
+
 .item,.notice{
   padding:13px;
   background:#f5faf6;
   border-left:4px solid #087443;
   border-radius:5px;
   margin:10px 0;
-  overflow-wrap:anywhere
+  overflow-wrap:anywhere;
 }
-.empty{text-align:center;color:#68766d;padding:12px}
-.small{font-size:13px;color:#66756a}
-label{display:block;font-weight:bold;margin-top:8px}
+
+.empty{
+  text-align:center;
+  color:#68766d;
+  padding:12px;
+}
+
+.small{
+  font-size:13px;
+  color:#66756a;
+}
+
+label{
+  display:block;
+  font-weight:bold;
+  margin-top:8px;
+}
+
 select,input{
   width:100%;
   padding:11px;
@@ -120,18 +208,20 @@ select,input{
   border-radius:7px;
   margin:5px 0 12px;
   font:inherit;
-  background:white
+  background:white;
 }
+
 footer{
   background:#064c2d;
   color:white;
   text-align:center;
   padding:22px 10px;
-  margin-top:25px
+  margin-top:25px;
 }
+
 footer p{margin:5px}
 
-/* নতুন: কর্মসূচির তালিকার ডিজাইন */
+/* কর্মসূচির তালিকার ডিজাইন */
 .program-card{
   text-align:left;
   display:flex;
@@ -144,6 +234,7 @@ footer p{margin:5px}
   border-radius:9px;
   margin:10px 0;
 }
+
 .program-number{
   min-width:36px;
   height:36px;
@@ -155,14 +246,18 @@ footer p{margin:5px}
   color:#fff;
   font-weight:bold;
 }
+
 .program-title{
   font-weight:bold;
   color:#075b35;
 }
+
 .program-description{
   color:#66756a;
   font-size:14px;
 }
+
+/* লাইব্রেরি লিংক */
 .library-link{
   display:block;
   text-decoration:none;
@@ -172,15 +267,37 @@ footer p{margin:5px}
   padding:15px;
   border-radius:9px;
   font-weight:bold;
+  transition:background .2s ease;
 }
+
 .library-link:hover{background:#075b35}
 
+/* মোবাইলের জন্য */
 @media(max-width:480px){
+  html{scroll-padding-top:140px}
+
   header h1{font-size:19px}
+
   main{padding:8px}
+
   .section,.hero{padding:13px}
+
   h2{font-size:19px}
-  nav a{font-size:13px;padding:6px 8px}
+
+  nav{
+    gap:7px;
+    padding:10px 7px;
+  }
+
+  nav a{
+    font-size:12px;
+    padding:7px 10px;
+    border-radius:8px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -201,11 +318,9 @@ footer p{margin:5px}
   <a href="#institution">শিক্ষাপ্রতিষ্ঠান</a>
   <a href="#notices">নোটিশ</a>
   <a href="#programs">কর্মসূচি</a>
-
-  <!-- পরিবর্তন: লাইব্রেরিতে ক্লিক করলে সরাসরি ওয়েবসাইট খুলবে -->
   <a href="https://icabdlibrary.com/"
      target="_blank"
-     rel="noopener noreferrer">লাইব্রেরি</a>
+     rel="noopener noreferrer">লাইব্রেরি ↗</a>
 </nav>
 
 <main>
@@ -257,7 +372,6 @@ footer p{margin:5px}
   <div id="noticeList"></div>
 </section>
 
-<!-- পরিবর্তন: কর্মসূচি মেনুতে ক্লিক করলে এখানে পাঁচটি কর্মসূচি দেখাবে -->
 <section class="section" id="programs">
   <h2>সাংগঠনিক কর্মসূচি</h2>
 
@@ -306,7 +420,6 @@ footer p{margin:5px}
   </div>
 </section>
 
-<!-- পাঠাগার সেকশন রাখা হয়েছে; মেনুর লিংক সরাসরি বাইরের সাইট খুলবে -->
 <section class="section" id="library">
   <h2>ইসলামি পাঠাগার</h2>
   <p>ইসলামী ছাত্র আন্দোলন বাংলাদেশের অনলাইন লাইব্রেরিতে প্রবেশ করুন।</p>
@@ -315,7 +428,7 @@ footer p{margin:5px}
      href="https://icabdlibrary.com/"
      target="_blank"
      rel="noopener noreferrer">
-    📚 অনলাইন লাইব্রেরিতে প্রবেশ করুন
+    📚 অনলাইন লাইব্রেরিতে প্রবেশ করুন ↗
   </a>
 </section>
 
@@ -330,7 +443,6 @@ footer p{margin:5px}
 <script>
 const DATA = {
 
-  // সভাপতি ও সাধারণ সম্পাদকের যোগাযোগ
   contacts: [
     {
       name: "মুহা. আবু বকর সিদ্দিক",
@@ -348,7 +460,6 @@ const DATA = {
     }
   ],
 
-  // থানা কমিটির ১৫ জন
   thana: [
     {name:"মুহা আবু বকর সিদ্দিক", role:"সভাপতি"},
     {name:"মুহা গোলাম রাব্বি", role:"সহ-সভাপতি"},
@@ -367,7 +478,6 @@ const DATA = {
     {name:"মুহা নাহিদুল ইসলাম", role:"কার্যনির্বাহী সদস্য"}
   ],
 
-  // দুইটি ওয়ার্ড কমিটি
   wards: [
     {ward:"১১ নং ওয়ার্ড", name:"মুহা ফরহাদ", role:"সভাপতি"},
     {ward:"১১ নং ওয়ার্ড", name:"মুহা ইউসুফ", role:"সাধারণ সম্পাদক"},
@@ -375,7 +485,6 @@ const DATA = {
     {ward:"১৩ নং ওয়ার্ড", name:"মুহা আশিকুর রহমান", role:"সাধারণ সম্পাদক"}
   ],
 
-  // দুইটি শিক্ষাপ্রতিষ্ঠান কমিটি
   institutions: [
     {institution:"দ্বিনিয়া মাদ্রাসা শাখা", name:"মুহা মুজাহিদুল ইসলাম", role:"সভাপতি"},
     {institution:"দ্বিনিয়া মাদ্রাসা শাখা", name:"মুহা ইয়ামিন", role:"সাধারণ সম্পাদক"},
@@ -613,8 +722,8 @@ renderInstitutions();
 renderPosts("notices","noticeList");
 renderLibrary();
 
-/* কর্মসূচি সরাসরি HTML-এ আছে, তাই JS দিয়ে আবার মুছবে না */
+/* কর্মসূচি সরাসরি HTML-এ আছে */
 </script>
 
 </body>
-</html>
+  </html>
