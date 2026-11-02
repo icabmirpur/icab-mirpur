@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#087443">
+<meta name="theme-color" content="#064e3b">
 <meta name="description" content="ইসলামী ছাত্র আন্দোলন বাংলাদেশ, মিরপুর মডেল থানা শাখা, ঢাকা মহানগর পশ্চিমের সাংগঠনিক ওয়েবসাইট।">
 <title>ইসলামী ছাত্র আন্দোলন বাংলাদেশ | মিরপুর মডেল থানা</title>
 
@@ -12,34 +12,51 @@
 
 html{
   scroll-behavior:smooth;
-  scroll-padding-top:100px;
+  scroll-padding-top:110px;
 }
 
 body{
   margin:0;
   font-family:"Noto Sans Bengali","Hind Siliguri",Arial,sans-serif;
-  background:#f3f7f4;
-  color:#243129;
+  background:#f0fdf4;
+  color:#1f2937;
   line-height:1.75;
 }
 
+/* আধুনিক প্রিমিয়াম হেডার */
 header{
-  background:linear-gradient(135deg,#075b35,#09854b);
+  background:linear-gradient(135deg, #022c22, #064e3b, #047857);
   color:#fff;
   text-align:center;
-  padding:26px 12px;
+  padding:30px 15px;
+  border-bottom:3px solid #d97706;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 header h1{
-  font-size:23px;
-  margin:0;
+  font-size:24px;
+  margin:0 0 5px 0;
+  letter-spacing:0.5px;
 }
 
-header p{margin:3px 0}
+header p{margin:4px 0; font-size:15px; color:#e6f4ea;}
 
-/* আধুনিক সবুজ-সোনালি নেভিগেশন মেনু */
+/* লাইভ তারিখ ও সময় বক্স */
+.live-datetime {
+  display: inline-block;
+  background: rgba(217, 119, 6, 0.2);
+  border: 1px solid #d97706;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #fef3c7;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* প্রিমিয়াম নেভিগেশন মেনু */
 nav{
-  background:linear-gradient(135deg,#043d25,#075b35);
+  background:linear-gradient(135deg, #064e3b, #022c22);
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
@@ -48,213 +65,221 @@ nav{
   position:sticky;
   top:0;
   z-index:100;
-  box-shadow:0 5px 16px #032c1b30;
-  border-bottom:2px solid #c9a955;
+  box-shadow:0 6px 20px rgba(0,0,0,0.2);
+  border-bottom:2px solid #d97706;
 }
 
 nav a{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  color:#f7fff9;
+  color:#fff;
   text-decoration:none;
-  padding:8px 13px;
-  border:1px solid #ffffff24;
-  border-radius:9px;
-  background:linear-gradient(145deg,#126c43,#0a5734);
+  padding:8px 14px;
+  border:1px solid rgba(217, 119, 6, 0.3);
+  border-radius:8px;
+  background:linear-gradient(145deg, #047857, #064e3b);
   font-size:14px;
   font-weight:600;
-  line-height:1.6;
   white-space:nowrap;
-  transition:
-    background .2s ease,
-    color .2s ease,
-    transform .2s ease,
-    border-color .2s ease,
-    box-shadow .2s ease;
-  box-shadow:0 2px 5px #001f1230;
+  transition: all 0.25s ease;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
 }
 
 nav a:hover{
-  background:linear-gradient(135deg,#d8bd72,#f0dda0);
-  color:#073d26;
-  border-color:#f0dda0;
+  background:linear-gradient(135deg, #d97706, #b45309);
+  color:#fff;
+  border-color:#fef3c7;
   transform:translateY(-2px);
-  box-shadow:0 5px 12px #001f1240;
-}
-
-nav a:active{
-  transform:scale(.96);
-}
-
-nav a:focus-visible{
-  outline:2px solid #f2d783;
-  outline-offset:3px;
+  box-shadow:0 5px 15px rgba(217, 119, 6, 0.3);
 }
 
 main{
   max-width:1100px;
   margin:auto;
-  padding:12px;
+  padding:15px;
 }
 
 .hero,.section{
   background:#fff;
-  border-radius:12px;
-  padding:19px;
-  margin:15px 0;
-  box-shadow:0 2px 9px #0000000b;
+  border-radius:14px;
+  padding:22px;
+  margin:18px 0;
+  box-shadow:0 4px 15px rgba(0,0,0,0.05);
+  border: 1px solid #e5e7eb;
 }
 
 .hero{
   text-align:center;
-  border-top:4px solid #087443;
-  padding:28px 15px;
+  border-top:5px solid #059669;
+  background: linear-gradient(to bottom, #ffffff, #f8fafc);
+  padding:32px 15px;
 }
 
 .hero h2{
   border:0;
   padding:0;
-  font-size:25px;
+  font-size:26px;
+  color:#064e3b;
 }
 
 h2{
-  color:#087443;
+  color:#064e3b;
   font-size:21px;
   margin-top:0;
-  border-bottom:2px solid #e4eee7;
-  padding-bottom:8px;
+  border-bottom:2px solid #e5e7eb;
+  padding-bottom:10px;
 }
 
-h3{margin:8px 0}
+h3{margin:8px 0; color:#111827;}
 
 .cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:13px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:15px;
 }
 
 .card{
-  border:1px solid #dce8df;
-  border-radius:10px;
-  padding:15px;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  padding:18px;
   text-align:center;
   overflow-wrap:anywhere;
   background:#fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
 }
 
 .photo{
-  width:105px;
-  height:105px;
+  width:110px;
+  height:110px;
   object-fit:cover;
   border-radius:50%;
-  border:3px solid #087443;
-  background:#e5f2e9;
-  margin-bottom:10px;
+  border:3px solid #059669;
+  background:#ecfdf5;
+  margin-bottom:12px;
+  box-shadow: 0 4px 10px rgba(5, 150, 105, 0.2);
 }
 
 .role{
-  color:#087443;
+  color:#059669;
   font-weight:bold;
-  margin:2px 0;
+  margin:4px 0;
+  font-size:15px;
 }
 
 .btn{
   display:inline-block;
-  background:#087443;
+  background:#059669;
   color:#fff;
   text-decoration:none;
-  padding:7px 12px;
-  border-radius:6px;
-  margin:4px;
+  padding:8px 15px;
+  border-radius:7px;
+  margin:5px 3px;
   font-size:14px;
+  font-weight: 600;
   border:0;
   cursor:pointer;
+  transition: background 0.2s;
 }
 
-.btn:hover{background:#075b35}
-
-.btn-red{background:#b42323}
+.btn:hover{background:#047857}
 
 .item,.notice{
-  padding:13px;
-  background:#f5faf6;
-  border-left:4px solid #087443;
-  border-radius:5px;
-  margin:10px 0;
-  overflow-wrap:anywhere;
+  padding:15px;
+  background:#f8fafc;
+  border-left:4px solid #059669;
+  border-radius:8px;
+  margin:12px 0;
+  border: 1px solid #e5e7eb;
+  border-left-width: 4px;
 }
 
 .empty{
   text-align:center;
-  color:#68766d;
-  padding:12px;
+  color:#6b7280;
+  padding:15px;
 }
 
 .small{
   font-size:13px;
-  color:#66756a;
+  color:#4b5563;
 }
 
 label{
   display:block;
   font-weight:bold;
-  margin-top:8px;
+  margin-top:10px;
+  color:#374151;
 }
 
 select,input{
   width:100%;
-  padding:11px;
-  border:1px solid #ccd9cf;
-  border-radius:7px;
-  margin:5px 0 12px;
+  padding:12px;
+  border:1px solid #d1d5db;
+  border-radius:8px;
+  margin:6px 0 14px;
   font:inherit;
-  background:white;
+  background:#fff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+select:focus, input:focus {
+  border-color: #059669;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
 }
 
 footer{
-  background:#064c2d;
+  background:#022c22;
   color:white;
   text-align:center;
-  padding:22px 10px;
-  margin-top:25px;
+  padding:25px 10px;
+  margin-top:30px;
+  border-top:3px solid #d97706;
 }
 
-footer p{margin:5px}
+footer p{margin:6px; color:#cbd5e1;}
 
 /* কর্মসূচির তালিকার ডিজাইন */
 .program-card{
   text-align:left;
   display:flex;
   align-items:center;
-  gap:12px;
-  padding:15px;
-  background:#f5faf6;
-  border:1px solid #dce8df;
-  border-left:4px solid #087443;
-  border-radius:9px;
-  margin:10px 0;
+  gap:15px;
+  padding:16px;
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+  border-left:4px solid #d97706;
+  border-radius:10px;
+  margin:12px 0;
 }
 
 .program-number{
-  min-width:36px;
-  height:36px;
+  min-width:38px;
+  height:38px;
   display:flex;
   align-items:center;
   justify-content:center;
   border-radius:50%;
-  background:#087443;
+  background:#d97706;
   color:#fff;
   font-weight:bold;
 }
 
 .program-title{
   font-weight:bold;
-  color:#075b35;
+  color:#064e3b;
+  font-size:16px;
 }
 
 .program-description{
-  color:#66756a;
+  color:#4b5563;
   font-size:14px;
 }
 
@@ -262,43 +287,31 @@ footer p{margin:5px}
 .library-link{
   display:block;
   text-decoration:none;
-  background:#087443;
+  background:linear-gradient(135deg, #059669, #047857);
   color:#fff;
   text-align:center;
-  padding:15px;
-  border-radius:9px;
+  padding:16px;
+  border-radius:10px;
   font-weight:bold;
-  transition:background .2s ease;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
+  transition: transform 0.2s;
 }
 
-.library-link:hover{background:#075b35}
+.library-link:hover{
+  background:linear-gradient(135deg, #047857, #064e3b);
+  transform: translateY(-2px);
+}
 
 /* মোবাইলের জন্য */
 @media(max-width:480px){
-  html{scroll-padding-top:140px}
-
-  header h1{font-size:19px}
-
+  html{scroll-padding-top:130px}
+  header h1{font-size:20px}
   main{padding:8px}
-
-  .section,.hero{padding:13px}
-
+  .section,.hero{padding:15px}
   h2{font-size:19px}
-
-  nav{
-    gap:7px;
-    padding:10px 7px;
-  }
-
-  nav a{
-    font-size:12px;
-    padding:7px 10px;
-    border-radius:8px;
-  }
-
-  .cards{
-    grid-template-columns:1fr;
-  }
+  nav{gap:6px; padding:10px 5px;}
+  nav a{font-size:12px; padding:7px 10px;}
+  .cards{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -307,8 +320,8 @@ footer p{margin:5px}
 
 <header>
   <h1>ইসলামী ছাত্র আন্দোলন বাংলাদেশ</h1>
-  <p>মিরপুর মডেল থানা শাখা</p>
-  <p>ঢাকা মহানগর পশ্চিম</p>
+  <p>মিরপুর মডেল থানা শাখা · ঢাকা মহানগর পশ্চিম</p>
+  <div class="live-datetime" id="liveDateTime">তারিখ ও সময় লোড হচ্ছে...</div>
 </header>
 
 <nav>
@@ -319,9 +332,7 @@ footer p{margin:5px}
   <a href="#institution">শিক্ষাপ্রতিষ্ঠান</a>
   <a href="#notices">নোটিশ</a>
   <a href="#programs">কর্মসূচি</a>
-  <a href="https://icabdlibrary.com/"
-     target="_blank"
-     rel="noopener noreferrer">লাইব্রেরি ↗</a>
+  <a href="https://icabdlibrary.com/" target="_blank" rel="noopener noreferrer">লাইব্রেরি ↗</a>
 </nav>
 
 <main>
@@ -331,8 +342,10 @@ footer p{margin:5px}
   <p><strong>ইসলামী ছাত্র আন্দোলন বাংলাদেশ</strong></p>
   <p>মিরপুর মডেল থানা শাখা · ঢাকা মহানগর পশ্চিম</p>
   <p>সাংগঠনিক কার্যক্রম, দায়িত্বশীলদের পরিচিতি, কমিটি, নোটিশ ও কর্মসূচির তথ্যকেন্দ্র।</p>
-  <a class="btn" href="#thana">কমিটি দেখুন</a>
-  <a class="btn" href="#contact">যোগাযোগ করুন</a>
+  <div style="margin-top: 15px;">
+    <a class="btn" href="#thana">কমিটি দেখুন</a>
+    <a class="btn" href="#contact" style="background:#d97706;">যোগাযোগ করুন</a>
+  </div>
 </section>
 
 <section class="section" id="contact">
@@ -375,9 +388,7 @@ footer p{margin:5px}
 
 <section class="section" id="programs">
   <h2>সাংগঠনিক কর্মসূচি</h2>
-
   <div id="programList">
-
     <div class="program-card">
       <div class="program-number">১</div>
       <div>
@@ -385,7 +396,6 @@ footer p{margin:5px}
         <div class="program-description">জ্ঞানার্জন ও প্রশিক্ষণ</div>
       </div>
     </div>
-
     <div class="program-card">
       <div class="program-number">২</div>
       <div>
@@ -393,7 +403,6 @@ footer p{margin:5px}
         <div class="program-description">আমল ও আত্মশুদ্ধি</div>
       </div>
     </div>
-
     <div class="program-card">
       <div class="program-number">৩</div>
       <div>
@@ -401,7 +410,6 @@ footer p{margin:5px}
         <div class="program-description">দাওয়াত</div>
       </div>
     </div>
-
     <div class="program-card">
       <div class="program-number">৪</div>
       <div>
@@ -409,7 +417,6 @@ footer p{margin:5px}
         <div class="program-description">সংগঠন</div>
       </div>
     </div>
-
     <div class="program-card">
       <div class="program-number">৫</div>
       <div>
@@ -417,18 +424,13 @@ footer p{margin:5px}
         <div class="program-description">বিপ্লব</div>
       </div>
     </div>
-
   </div>
 </section>
 
 <section class="section" id="library">
   <h2>ইসলামি পাঠাগার</h2>
   <p>ইসলামী ছাত্র আন্দোলন বাংলাদেশের অনলাইন লাইব্রেরিতে প্রবেশ করুন।</p>
-
-  <a class="library-link"
-     href="https://icabdlibrary.com/"
-     target="_blank"
-     rel="noopener noreferrer">
+  <a class="library-link" href="https://icabdlibrary.com/" target="_blank" rel="noopener noreferrer">
     📚 অনলাইন লাইব্রেরিতে প্রবেশ করুন ↗
   </a>
 </section>
@@ -442,8 +444,18 @@ footer p{margin:5px}
 </footer>
 
 <script>
-const DATA = {
+/* লাইভ তারিখ ও সময় আপডেট স্ক্রিপ্ট */
+function updateDateTime() {
+  const now = new Date();
+  const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+  const dateStr = now.toLocaleDateString('bn-BD', options);
+  const timeStr = now.toLocaleTimeString('bn-BD');
+  document.getElementById('liveDateTime').textContent = `📅 ${dateStr} | ⏰ ${timeStr}`;
+}
+setInterval(updateDateTime, 1000);
+updateDateTime();
 
+const DATA = {
   contacts: [
     {
       name: "মুহা. আবু বকর সিদ্দিক",
@@ -566,7 +578,6 @@ function memberCard(person, showContact=false){
 /* যোগাযোগ */
 function renderContacts(){
   const el = document.getElementById("contactList");
-
   el.innerHTML = DATA.contacts.length
     ? DATA.contacts.map(p => memberCard(p,true)).join("")
     : '<p class="empty">যোগাযোগের তথ্য যোগ করা হয়নি।</p>';
@@ -582,7 +593,6 @@ function renderThana(){
     const list = DATA.thana.filter(p =>
       (p.name+" "+p.role).toLowerCase().includes(q)
     );
-
     el.innerHTML = list.length
       ? list.map(p => memberCard(p)).join("")
       : '<p class="empty">কোনো তথ্য পাওয়া যায়নি।</p>';
@@ -610,12 +620,10 @@ function renderWards(){
   function show(){
     const chosen = select.value;
     const q = search.value.trim().toLowerCase();
-
     const list = DATA.wards.filter(p =>
       (chosen === "all" || p.ward === chosen) &&
       (p.name+" "+p.role+" "+p.ward).toLowerCase().includes(q)
     );
-
     el.innerHTML = list.length
       ? list.map(p=>memberCard(p)).join("")
       : '<p class="empty">এই তালিকায় কোনো তথ্য নেই।</p>';
@@ -644,12 +652,10 @@ function renderInstitutions(){
   function show(){
     const chosen = select.value;
     const q = search.value.trim().toLowerCase();
-
     const list = DATA.institutions.filter(p =>
       (chosen === "all" || p.institution === chosen) &&
       (p.name+" "+p.role+" "+p.institution).toLowerCase().includes(q)
     );
-
     el.innerHTML = list.length
       ? list.map(p=>memberCard(p)).join("")
       : '<p class="empty">এই তালিকায় কোনো তথ্য নেই।</p>';
@@ -673,42 +679,17 @@ function renderPosts(key,id){
   el.innerHTML = list.map(item => {
     let html = '<article class="item">';
     html += '<h3>'+esc(item.title)+'</h3>';
-
     if(item.date){
       html += '<p class="small">তারিখ: '+esc(item.date)+'</p>';
     }
-
     if(item.place){
       html += '<p>স্থান: '+esc(item.place)+'</p>';
     }
-
     if(item.text){
       html += '<p>'+esc(item.text)+'</p>';
     }
-
     html += '</article>';
     return html;
-  }).join("");
-}
-
-/* পাঠাগারের তালিকা */
-function renderLibrary(){
-  const el = document.getElementById("libraryList");
-
-  if(!el) return;
-
-  if(!DATA.library.length){
-    el.innerHTML = '<p class="empty">পাঠাগারের তথ্য এখনো যোগ করা হয়নি।</p>';
-    return;
-  }
-
-  el.innerHTML = DATA.library.map(item => {
-    const link = safeUrl(item.link || "");
-    return '<article class="item"><h3>'+esc(item.title)+'</h3>'+
-      '<p>'+esc(item.description || "")+'</p>'+
-      (link ? '<a class="btn" href="'+esc(link)+
-      '" target="_blank" rel="noopener noreferrer">বিস্তারিত পড়ুন</a>' : '')+
-      '</article>';
   }).join("");
 }
 
@@ -721,7 +702,6 @@ renderThana();
 renderWards();
 renderInstitutions();
 renderPosts("notices","noticeList");
-renderLibrary();
 </script>
 
 </body>
