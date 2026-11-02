@@ -483,15 +483,13 @@ const DATA = {
       name: "মুহা. আবু বকর সিদ্দিক",
       role: "সভাপতি",
       phone: "01879003145",
-      photo: "president.jpg",
-      facebook: "https://www.facebook.com/abubakarsiddekphulpuri.0"
+      photo: "president.jpg"
     },
     {
       name: "এইচ এম সাইদুল ইসলাম সাইদ",
       role: "সাধারণ সম্পাদক",
       phone: "01949757904",
-      photo: "general-secretary.jpg",
-      facebook: "https://www.facebook.com/mdsaidulislamsaid.0"
+      photo: "general-secretary.jpg"
     }
   ],
 
@@ -569,13 +567,6 @@ function memberCard(person, showContact=false){
     if(phone){
       html += '<a class="btn" href="tel:'+esc(phone)+'">ফোন করুন</a>';
       html += '<p class="small">'+esc(person.phone)+'</p>';
-    }
-  }
-  if(showContact && person.facebook){
-    const fb = safeUrl(person.facebook);
-    if(fb){
-      html += '<a class="btn" href="'+esc(fb)+
-        '" target="_blank" rel="noopener noreferrer">ফেসবুক আইডি</a>';
     }
   }
   html += '</article>';
