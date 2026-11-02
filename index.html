@@ -190,14 +190,36 @@ h3{margin:8px 0; color:#111827;}
 
 .btn:hover{background:#047857}
 
-.item,.notice{
-  padding:15px;
-  background:#f8fafc;
-  border-left:4px solid #059669;
-  border-radius:8px;
-  margin:12px 0;
-  border: 1px solid #e5e7eb;
-  border-left-width: 4px;
+/* নোটিশ বক্সের আকর্ষণীয় ডিজাইন */
+.notice-card {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-left: 5px solid #d97706;
+  border-radius: 10px;
+  padding: 18px;
+  margin: 14px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.notice-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #92400e;
+  margin: 0 0 6px 0;
+}
+
+.notice-date {
+  font-size: 13px;
+  color: #b45309;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.notice-text {
+  color: #374151;
+  font-size: 15px;
+  margin: 0;
+  white-space: pre-line;
 }
 
 .empty{
@@ -383,7 +405,7 @@ footer p{margin:6px; color:#cbd5e1;}
 
 <section class="section" id="notices">
   <h2>নোটিশ ও বিজ্ঞপ্তি</h2>
-  <div id="noticeList"></div>
+  <div id="noticeList"><p class="empty">নোটিশ লোড হচ্ছে...</p></div>
 </section>
 
 <section class="section" id="programs">
@@ -503,11 +525,7 @@ const DATA = {
     {institution:"দ্বিনিয়া মাদ্রাসা শাখা", name:"মুহা ইয়ামিন", role:"সাধারণ সম্পাদক"},
     {institution:"বাইতুন নুর মাদ্রাসা শাখা", name:"মুহা শাহেদ ইসলাম", role:"সভাপতি"},
     {institution:"বাইতুন নুর মাদ্রাসা শাখা", name:"মুহা আবুল কাশেম", role:"সাধারণ সম্পাদক"}
-  ],
-
-  notices: [],
-  programs: [],
-  library: []
+  ]
 };
 
 /* HTML নিরাপদভাবে প্রদর্শন */
@@ -537,24 +555,15 @@ function safeUrl(value){
 /* কমিটির সদস্যের কার্ড */
 function memberCard(person, showContact=false){
   let html = '<article class="card">';
-
   if(showContact && person.photo){
     html += '<img class="photo" src="'+esc(person.photo)+
       '" alt="'+esc(person.name)+
       '" onerror="this.style.display=\'none\'">';
   }
-
   html += '<h3>'+esc(person.name)+'</h3>';
   html += '<p class="role">'+esc(person.role)+'</p>';
-
-  if(person.ward){
-    html += '<p>'+esc(person.ward)+'</p>';
-  }
-
-  if(person.institution){
-    html += '<p>'+esc(person.institution)+'</p>';
-  }
-
+  if(person.ward){ html += '<p>'+esc(person.ward)+'</p>'; }
+  if(person.institution){ html += '<p>'+esc(person.institution)+'</p>'; }
   if(showContact && person.phone){
     const phone = String(person.phone).replace(/[^\d+]/g,"");
     if(phone){
@@ -562,7 +571,6 @@ function memberCard(person, showContact=false){
       html += '<p class="small">'+esc(person.phone)+'</p>';
     }
   }
-
   if(showContact && person.facebook){
     const fb = safeUrl(person.facebook);
     if(fb){
@@ -570,7 +578,6 @@ function memberCard(person, showContact=false){
         '" target="_blank" rel="noopener noreferrer">ফেসবুক আইডি</a>';
     }
   }
-
   html += '</article>';
   return html;
 }
@@ -587,36 +594,25 @@ function renderContacts(){
 function renderThana(){
   const el = document.getElementById("thanaList");
   const search = document.getElementById("thanaSearch");
-
   function show(){
     const q = search.value.trim().toLowerCase();
-    const list = DATA.thana.filter(p =>
-      (p.name+" "+p.role).toLowerCase().includes(q)
-    );
+    const list = DATA.thana.filter(p => (p.name+" "+p.role).toLowerCase().includes(q));
     el.innerHTML = list.length
       ? list.map(p => memberCard(p)).join("")
       : '<p class="empty">কোনো তথ্য পাওয়া যায়নি।</p>';
   }
-
   search.addEventListener("input",show);
   show();
 }
 
-/* ওয়ার্ড কমিটি, নির্বাচন ও সার্চ */
+/* ওয়ার্ড কমিটি */
 function renderWards(){
   const select = document.getElementById("wardSelect");
   const search = document.getElementById("wardSearch");
   const el = document.getElementById("wardList");
-
-  const wardNames = [...new Set(
-    DATA.wards.map(p=>p.ward).filter(Boolean)
-  )];
-
+  const wardNames = [...new Set(DATA.wards.map(p=>p.ward).filter(Boolean))];
   select.innerHTML = '<option value="all">সকল ওয়ার্ড</option>' +
-    wardNames.map(w =>
-      '<option value="'+esc(w)+'">'+esc(w)+'</option>'
-    ).join("");
-
+    wardNames.map(w => '<option value="'+esc(w)+'">'+esc(w)+'</option>').join("");
   function show(){
     const chosen = select.value;
     const q = search.value.trim().toLowerCase();
@@ -628,27 +624,19 @@ function renderWards(){
       ? list.map(p=>memberCard(p)).join("")
       : '<p class="empty">এই তালিকায় কোনো তথ্য নেই।</p>';
   }
-
   select.addEventListener("change",show);
   search.addEventListener("input",show);
   show();
 }
 
-/* শিক্ষাপ্রতিষ্ঠান কমিটি, নির্বাচন ও সার্চ */
+/* শিক্ষাপ্রতিষ্ঠান কমিটি */
 function renderInstitutions(){
   const select = document.getElementById("institutionSelect");
   const search = document.getElementById("institutionSearch");
   const el = document.getElementById("institutionList");
-
-  const names = [...new Set(
-    DATA.institutions.map(p=>p.institution).filter(Boolean)
-  )];
-
+  const names = [...new Set(DATA.institutions.map(p=>p.institution).filter(Boolean))];
   select.innerHTML = '<option value="all">সকল প্রতিষ্ঠান</option>' +
-    names.map(n =>
-      '<option value="'+esc(n)+'">'+esc(n)+'</option>'
-    ).join("");
-
+    names.map(n => '<option value="'+esc(n)+'">'+esc(n)+'</option>').join("");
   function show(){
     const chosen = select.value;
     const q = search.value.trim().toLowerCase();
@@ -660,37 +648,34 @@ function renderInstitutions(){
       ? list.map(p=>memberCard(p)).join("")
       : '<p class="empty">এই তালিকায় কোনো তথ্য নেই।</p>';
   }
-
   select.addEventListener("change",show);
   search.addEventListener("input",show);
   show();
 }
 
-/* নোটিশ ও অন্যান্য পোস্ট */
-function renderPosts(key,id){
-  const el = document.getElementById(id);
-  const list = DATA[key];
+/* notices.json থেকে স্বয়ংক্রিয়ভাবে নোটিশ আনার ফাংশন */
+async function loadNoticesFromJSON() {
+  const el = document.getElementById("noticeList");
+  try {
+    const response = await fetch('notices.json');
+    if (!response.ok) throw new Error();
+    const notices = await response.json();
+    
+    if(!notices.length){
+      el.innerHTML = '<p class="empty">বর্তমানে কোনো নোটিশ প্রকাশ করা হয়নি।</p>';
+      return;
+    }
 
-  if(!list.length){
-    el.innerHTML = '<p class="empty">বর্তমানে কোনো তথ্য প্রকাশ করা হয়নি।</p>';
-    return;
+    el.innerHTML = notices.map(item => `
+      <div class="notice-card">
+        <h3 class="notice-title">${esc(item.title)}</h3>
+        ${item.date ? '<div class="notice-date">প্রকাশের তারিখ: ' + esc(item.date) + '</div>' : ''}
+        <p class="notice-text">${esc(item.text)}</p>
+      </div>
+    `).join("");
+  } catch (err) {
+    el.innerHTML = '<p class="empty">বর্তমানে কোনো নোটিশ প্রকাশ করা হয়নি।</p>';
   }
-
-  el.innerHTML = list.map(item => {
-    let html = '<article class="item">';
-    html += '<h3>'+esc(item.title)+'</h3>';
-    if(item.date){
-      html += '<p class="small">তারিখ: '+esc(item.date)+'</p>';
-    }
-    if(item.place){
-      html += '<p>স্থান: '+esc(item.place)+'</p>';
-    }
-    if(item.text){
-      html += '<p>'+esc(item.text)+'</p>';
-    }
-    html += '</article>';
-    return html;
-  }).join("");
 }
 
 /* বছর */
@@ -701,7 +686,7 @@ renderContacts();
 renderThana();
 renderWards();
 renderInstitutions();
-renderPosts("notices","noticeList");
+loadNoticesFromJSON();
 </script>
 
 </body>
